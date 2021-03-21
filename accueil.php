@@ -20,7 +20,7 @@ Sur cette page on peut :
 
     <!------------------------------------------------------>
     <body>
-        <h1> Bienvenu ! </h1>
+        <h1> Bienvenu aux beaux penseurs ! </h1>
         
     </body>
 </html>
