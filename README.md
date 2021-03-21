@@ -6,3 +6,4 @@ A website built for a course, about sustainable thought.
 - avoir des pages en favorie ?
 - commenter un article 
 - un autre truc 
+- Ouais ouais vite l'interface
