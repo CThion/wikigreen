@@ -15,12 +15,12 @@ Sur cette page on peut :
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <title> XXXXXXXXXXXXXX </title>
+        <title> Page d'accueil non connecté </title>
     </head>
 
     <!------------------------------------------------------>
     <body>
-        <h1> XXXXXXXXXXXXXX </h1>
+        <h1> Bienvenu ! </h1>
         
     </body>
 </html>
