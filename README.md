@@ -7,3 +7,4 @@ A website built for a course, about sustainable thought.
 - commenter un article 
 - un autre truc 
 - Ouais ouais vite l'interface
+- version gitlab
