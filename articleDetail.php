@@ -1,8 +1,5 @@
-<!-- Page d'accueil du site (hors connexion)
-Sur cette page on peut :
-    - avoir les infos générales du site
-    - voir les derniers articles récents
-    - se connecter
+<!-- 
+    Page affichant le contenu d'un article, avec images résumé et la liste des références détaillées
 -->
 
 <!--==============================================================-->
@@ -15,12 +12,12 @@ Sur cette page on peut :
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <title> Page d'accueil non connecté </title>
+        <title> XXXXXXXXXXXXXX </title>
     </head>
 
     <!------------------------------------------------------>
     <body>
-        <h1> Bienvenu aux beaux penseurs ! </h1>
+        <h1> XXXXXXXXXXXXXX </h1>
         
     </body>
 </html>
