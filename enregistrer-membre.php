@@ -5,7 +5,7 @@
 -->
 
 <!--==============================================================-->
-<?php require_once("connexion_base.php"); 
+<?php require_once(".settings\connexion_base.php"); 
 
     //----récupération paramètre pour table membre----
     $reussi = false;

@@ -1,6 +1,6 @@
 <?php 
     session_start(); 
-    require_once("connexion_base.php"); //connexion base
+    require_once(".settings\connexion_base.php"); //connexion base
 
     //-- récupération id membre précisé
     $id = 0 ;//id par défaut si aucun renseigné

@@ -1,6 +1,6 @@
 <?php 
     session_start(); 
-    require_once("connexion_base.php");
+    require_once(".settings\connexion_base.php");
     unset($_SESSION['pseudo']); //on retire les informations de l'utilisateur ==> déconnexion
     unset($_SESSION['id_membre']);
 ?>

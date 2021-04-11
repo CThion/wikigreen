@@ -4,7 +4,7 @@
 
 <!--==============================================================-->
 <?php 
-    require_once("connexion_base.php"); 
+    require_once(".settings\connexion_base.php"); 
 
     // ---- infos TABLE categorie ----
     $requete_categorie = "SELECT * FROM categorie;";
@@ -28,7 +28,7 @@
         
             <form action="enregistrer-membre.php" method="post">
                 <fieldset>    
-                    <p>Pseudo            : <input type="text" name="pseudo" /></p>
+                    <p>Pseudo            :<input type="text" name="pseudo" /></p>
                     <p>Mot de passe      :<input type="password" name="motdepasse" /></p>
                     <p>Prénom            :<input type="text" name="prenom" /></p>
                     <p>Nom               :<input type="text" name="nom" /></p>
