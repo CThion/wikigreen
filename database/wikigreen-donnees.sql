@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 11 avr. 2021 à 12:23
+-- Généré le : Dim 11 avr. 2021 à 19:57
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `wikigreen`
+-- Base de données : `cthion`
 --
 
 --
@@ -37,15 +37,15 @@ INSERT INTO `cmt` (`id`, `id_mb`, `texte`, `date`, `noteposi`, `notenega`) VALUE
 -- Déchargement des données de la table `mb`
 --
 
-INSERT INTO `mb` (`id`, `nom`, `prenom`, `pseudo`, `mail`, `mdp`) VALUES
-(1, 'Kevin', 'Jean', 'Jkv13', 'jean.kevin@yahoo.com', 'jfizojfze5456fzeu-_hef'),
-(2, 'Cazoom', 'Marcus', 'Piriti', 'marcuscazoom37@orange.fr', 'foaizuehfiuhz46546ehfi'),
-(3, 'Tari', 'Pierre', 'soyaka', 'pierre.tari@gmail.com', 'piuhifzuhe-_fieoz5_-_45'),
-(4, 'Jonson', 'Michael', 'chifoumi', 'michael.jonson@gmail.com', 'jfioazprjfaozijojir-_-_-iorzjgfoizje'),
-(5, 'Ideale', 'Cendrion', 'yellowbird', 'cendrineideal@zoho.com', 'fpioajzprgiozerpgjze^pkôjmlniuhreg'),
-(6, 'Barbier', 'Sam', 'sami', 'sam.barbier@laposte.net', 'paoizjfpoijgmlqk,sdovijs'),
-(7, 'Chemin', 'Iris', 'picoti', 'iris.chemin@orange.fr', 'apiuehpaoihuvaiovns'),
-(8, 'Dufrantier', 'Walter', 'wali', 'walter.duplantier@gmail.com', 'perigpskd,oijpoijaspdj');
+INSERT INTO `mb` (`id`, `nom`, `prenom`, `pseudo`, `mail`, `mdp`, `niveau`) VALUES
+(1, 'Kevin', 'Jean', 'Jkv13', 'jean.kevin@yahoo.com', 'jfizojfze5456fzeu-_hef', ''),
+(2, 'Cazoom', 'Marcus', 'Piriti', 'marcuscazoom37@orange.fr', 'foaizuehfiuhz46546ehfi', ''),
+(3, 'Tari', 'Pierre', 'soyaka', 'pierre.tari@gmail.com', 'piuhifzuhe-_fieoz5_-_45', ''),
+(4, 'Jonson', 'Michael', 'chifoumi', 'michael.jonson@gmail.com', 'jfioazprjfaozijojir-_-_-iorzjgfoizje', ''),
+(5, 'Ideale', 'Cendrion', 'yellowbird', 'cendrineideal@zoho.com', 'fpioajzprgiozerpgjze^pkôjmlniuhreg', ''),
+(6, 'Barbier', 'Sam', 'sami', 'sam.barbier@laposte.net', 'paoizjfpoijgmlqk,sdovijs', ''),
+(7, 'Chemin', 'Iris', 'picoti', 'iris.chemin@orange.fr', 'apiuehpaoihuvaiovns', ''),
+(8, 'Dufrantier', 'Walter', 'wali', 'walter.duplantier@gmail.com', 'perigpskd,oijpoijaspdj', '');
 
 --
 -- Déchargement des données de la table `reftype`
