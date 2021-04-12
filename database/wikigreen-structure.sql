@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 11 avr. 2021 à 19:56
+-- Généré le : lun. 12 avr. 2021 à 18:33
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -26,6 +26,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `art`
+--
+
+CREATE TABLE `art` (
+  `id` int(11) NOT NULL,
+  `id_thm` int(11) NOT NULL,
+  `id_ref` int(11) NOT NULL COMMENT 'reference de l''article (sa source)',
+  `id_mb` int(11) NOT NULL COMMENT 'auteur de cette version de l''article',
+  `titre` tinytext NOT NULL,
+  `image` tinytext NOT NULL,
+  `texte` text NOT NULL COMMENT 'résumé de l''article pour le présenter',
+  `date` datetime NOT NULL COMMENT 'date de création de cette version de l''article',
+  `noteposi` mediumint(9) NOT NULL COMMENT 'notations positives des membres',
+  `notenega` mediumint(9) NOT NULL COMMENT 'notation négatives des membres'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='contenu. Présente un article et y redirige à sa source (ref)';
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `art_typeinfo`
+--
+
+CREATE TABLE `art_typeinfo` (
+  `id` int(11) NOT NULL,
+  `id_art` int(11) NOT NULL,
+  `id_typeinfo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `cmt`
 --
 
@@ -36,6 +67,18 @@ CREATE TABLE `cmt` (
   `date` datetime NOT NULL,
   `noteposi` int(11) DEFAULT NULL,
   `notenega` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `cmt_art`
+--
+
+CREATE TABLE `cmt_art` (
+  `id` int(11) NOT NULL,
+  `id_art` int(11) NOT NULL,
+  `id_cmt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -93,13 +136,13 @@ CREATE TABLE `mb` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mb_ref`
+-- Structure de la table `mb_art`
 --
 
-CREATE TABLE `mb_ref` (
+CREATE TABLE `mb_art` (
   `id` int(11) NOT NULL,
   `id_mb` int(11) NOT NULL,
-  `id_ref` int(11) NOT NULL
+  `id_art` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table de jonction pour les articles favoris des membres';
 
 -- --------------------------------------------------------
@@ -110,7 +153,6 @@ CREATE TABLE `mb_ref` (
 
 CREATE TABLE `ref` (
   `id` int(11) NOT NULL,
-  `id_thm` int(11) NOT NULL,
   `id_mb` int(11) NOT NULL COMMENT 'auteur de cette version de la reference',
   `titre` text NOT NULL,
   `logo` text NOT NULL COMMENT 'adresse de l''image',
@@ -124,21 +166,10 @@ CREATE TABLE `ref` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reftype`
+-- Structure de la table `ref_typeinfo`
 --
 
-CREATE TABLE `reftype` (
-  `id` int(11) NOT NULL,
-  `type` tinytext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `ref_reftype`
---
-
-CREATE TABLE `ref_reftype` (
+CREATE TABLE `ref_typeinfo` (
   `id` int(11) NOT NULL,
   `id_ref` int(11) NOT NULL,
   `id_reftype` int(11) NOT NULL
@@ -153,7 +184,7 @@ CREATE TABLE `ref_reftype` (
 CREATE TABLE `sec` (
   `id` int(11) NOT NULL,
   `id_mb` int(11) NOT NULL COMMENT 'auteur de cette version de la section',
-  `titre` int(11) NOT NULL,
+  `titre` tinytext NOT NULL,
   `logo` tinytext NOT NULL COMMENT 'adresse de l''image',
   `texte` text NOT NULL COMMENT 'texte présentant la section',
   `date` datetime NOT NULL COMMENT 'date de publication de cette version de la section'
@@ -169,10 +200,21 @@ CREATE TABLE `thm` (
   `id` int(11) NOT NULL,
   `id_sec` int(11) NOT NULL,
   `id_mb` int(11) NOT NULL COMMENT 'auteur de cette version du theme',
-  `titre` int(11) NOT NULL,
+  `titre` tinytext NOT NULL,
   `logo` tinytext NOT NULL COMMENT 'adresse de l''image',
   `texte` text COMMENT 'texte présentant le theme',
   `date` datetime NOT NULL COMMENT 'date de publication de cette version du theme'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `typeinfo`
+--
+
+CREATE TABLE `typeinfo` (
+  `id` int(11) NOT NULL,
+  `type` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -180,11 +222,36 @@ CREATE TABLE `thm` (
 --
 
 --
+-- Index pour la table `art`
+--
+ALTER TABLE `art`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_mb` (`id_mb`,`id_ref`,`date`),
+  ADD KEY `id_ref` (`id_ref`),
+  ADD KEY `id_thm` (`id_thm`);
+
+--
+-- Index pour la table `art_typeinfo`
+--
+ALTER TABLE `art_typeinfo`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_art` (`id_art`,`id_typeinfo`),
+  ADD KEY `id_typeinfo` (`id_typeinfo`);
+
+--
 -- Index pour la table `cmt`
 --
 ALTER TABLE `cmt`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_membre` (`id_mb`);
+
+--
+-- Index pour la table `cmt_art`
+--
+ALTER TABLE `cmt_art`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_art` (`id_art`,`id_cmt`),
+  ADD KEY `id_cmt` (`id_cmt`);
 
 --
 -- Index pour la table `cmt_ref`
@@ -217,32 +284,25 @@ ALTER TABLE `mb`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `mb_ref`
+-- Index pour la table `mb_art`
 --
-ALTER TABLE `mb_ref`
+ALTER TABLE `mb_art`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_mb` (`id_mb`,`id_ref`),
-  ADD KEY `id_ref` (`id_ref`);
+  ADD KEY `id_mb` (`id_mb`,`id_art`),
+  ADD KEY `id_art` (`id_art`);
 
 --
 -- Index pour la table `ref`
 --
 ALTER TABLE `ref`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_thm` (`id_thm`),
   ADD KEY `id_mb` (`id_mb`),
   ADD KEY `date` (`date`);
 
 --
--- Index pour la table `reftype`
+-- Index pour la table `ref_typeinfo`
 --
-ALTER TABLE `reftype`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `ref_reftype`
---
-ALTER TABLE `ref_reftype`
+ALTER TABLE `ref_typeinfo`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_ref` (`id_ref`,`id_reftype`),
   ADD KEY `id_reftype` (`id_reftype`);
@@ -266,13 +326,37 @@ ALTER TABLE `thm`
   ADD KEY `date` (`date`);
 
 --
+-- Index pour la table `typeinfo`
+--
+ALTER TABLE `typeinfo`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `art`
+--
+ALTER TABLE `art`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `art_typeinfo`
+--
+ALTER TABLE `art_typeinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `cmt`
 --
 ALTER TABLE `cmt`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `cmt_art`
+--
+ALTER TABLE `cmt_art`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -300,9 +384,9 @@ ALTER TABLE `mb`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `mb_ref`
+-- AUTO_INCREMENT pour la table `mb_art`
 --
-ALTER TABLE `mb_ref`
+ALTER TABLE `mb_art`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -312,15 +396,9 @@ ALTER TABLE `ref`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `reftype`
+-- AUTO_INCREMENT pour la table `ref_typeinfo`
 --
-ALTER TABLE `reftype`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `ref_reftype`
---
-ALTER TABLE `ref_reftype`
+ALTER TABLE `ref_typeinfo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -336,14 +414,42 @@ ALTER TABLE `thm`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `typeinfo`
+--
+ALTER TABLE `typeinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `art`
+--
+ALTER TABLE `art`
+  ADD CONSTRAINT `art_ibfk_1` FOREIGN KEY (`id_mb`) REFERENCES `mb` (`id`),
+  ADD CONSTRAINT `art_ibfk_2` FOREIGN KEY (`id_ref`) REFERENCES `ref` (`id`),
+  ADD CONSTRAINT `art_ibfk_3` FOREIGN KEY (`id_thm`) REFERENCES `thm` (`id`);
+
+--
+-- Contraintes pour la table `art_typeinfo`
+--
+ALTER TABLE `art_typeinfo`
+  ADD CONSTRAINT `art_typeinfo_ibfk_1` FOREIGN KEY (`id_art`) REFERENCES `art` (`id`),
+  ADD CONSTRAINT `art_typeinfo_ibfk_2` FOREIGN KEY (`id_typeinfo`) REFERENCES `typeinfo` (`id`);
 
 --
 -- Contraintes pour la table `cmt`
 --
 ALTER TABLE `cmt`
   ADD CONSTRAINT `cmt_ibfk_1` FOREIGN KEY (`id_mb`) REFERENCES `mb` (`id`);
+
+--
+-- Contraintes pour la table `cmt_art`
+--
+ALTER TABLE `cmt_art`
+  ADD CONSTRAINT `cmt_art_ibfk_1` FOREIGN KEY (`id_cmt`) REFERENCES `cmt` (`id`),
+  ADD CONSTRAINT `cmt_art_ibfk_2` FOREIGN KEY (`id_art`) REFERENCES `art` (`id`);
 
 --
 -- Contraintes pour la table `cmt_ref`
@@ -367,25 +473,24 @@ ALTER TABLE `cmt_thm`
   ADD CONSTRAINT `cmt_thm_ibfk_2` FOREIGN KEY (`id_thm`) REFERENCES `thm` (`id`);
 
 --
--- Contraintes pour la table `mb_ref`
+-- Contraintes pour la table `mb_art`
 --
-ALTER TABLE `mb_ref`
-  ADD CONSTRAINT `mb_ref_ibfk_1` FOREIGN KEY (`id_mb`) REFERENCES `mb` (`id`),
-  ADD CONSTRAINT `mb_ref_ibfk_2` FOREIGN KEY (`id_ref`) REFERENCES `ref` (`id`);
+ALTER TABLE `mb_art`
+  ADD CONSTRAINT `mb_art_ibfk_1` FOREIGN KEY (`id_mb`) REFERENCES `mb` (`id`),
+  ADD CONSTRAINT `mb_art_ibfk_2` FOREIGN KEY (`id_art`) REFERENCES `art` (`id`);
 
 --
 -- Contraintes pour la table `ref`
 --
 ALTER TABLE `ref`
-  ADD CONSTRAINT `ref_ibfk_1` FOREIGN KEY (`id_thm`) REFERENCES `thm` (`id`),
   ADD CONSTRAINT `ref_ibfk_2` FOREIGN KEY (`id_mb`) REFERENCES `mb` (`id`);
 
 --
--- Contraintes pour la table `ref_reftype`
+-- Contraintes pour la table `ref_typeinfo`
 --
-ALTER TABLE `ref_reftype`
-  ADD CONSTRAINT `ref_reftype_ibfk_1` FOREIGN KEY (`id_ref`) REFERENCES `ref` (`id`),
-  ADD CONSTRAINT `ref_reftype_ibfk_2` FOREIGN KEY (`id_reftype`) REFERENCES `reftype` (`id`);
+ALTER TABLE `ref_typeinfo`
+  ADD CONSTRAINT `ref_typeinfo_ibfk_1` FOREIGN KEY (`id_ref`) REFERENCES `ref` (`id`),
+  ADD CONSTRAINT `ref_typeinfo_ibfk_2` FOREIGN KEY (`id_reftype`) REFERENCES `typeinfo` (`id`);
 
 --
 -- Contraintes pour la table `sec`

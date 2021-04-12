@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 11 avr. 2021 à 19:57
+-- Généré le : lun. 12 avr. 2021 à 18:35
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -48,10 +48,10 @@ INSERT INTO `mb` (`id`, `nom`, `prenom`, `pseudo`, `mail`, `mdp`, `niveau`) VALU
 (8, 'Dufrantier', 'Walter', 'wali', 'walter.duplantier@gmail.com', 'perigpskd,oijpoijaspdj', '');
 
 --
--- Déchargement des données de la table `reftype`
+-- Déchargement des données de la table `typeinfo`
 --
 
-INSERT INTO `reftype` (`id`, `type`) VALUES
+INSERT INTO `typeinfo` (`id`, `type`) VALUES
 (1, 'vidéo'),
 (2, 'podcast'),
 (3, 'livre'),
