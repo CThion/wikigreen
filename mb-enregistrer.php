@@ -8,26 +8,24 @@
 <?php require_once(".settings\connexion_base.php"); 
 
     //----récupération paramètre pour table membre----
-    $reussi = false;
-    if (//si tout est bien renseigné dans le formulaire ...
+    $reussi = false; #conditinne le message affiché après la saisie (voir plus bas)
+    if (//si tout est bien renseigné dans le formulaire de mb-inscription.php ...
         !empty($_POST['pseudo']) && !empty($_POST['motdepasse']) && !empty($_POST['email']) &&
-        !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['id_categorie']) &&
-        !empty($_POST['consentement']))
+        !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['consentement']))
     {//...on affecte les valeurs et on implémente la BDD
         $pseudo = $_POST['pseudo'];
         $motdepasse = $_POST['motdepasse'];
         $email = $_POST['email'];
         $prenom = $_POST['prenom'];
         $nom = $_POST['nom'];
-        $id_categorie = $_POST['id_categorie'];
-        $infoMembre = [$pseudo, $email, $prenom, $nom, $id_categorie];
-        $motdepasse_crypte = password_hash($motdepasse, PASSWORD_DEFAULT); //cryptage du mdp (comme MD() mais en plus fort)
+        $infoMembre = [$pseudo, $email, $prenom, $nom];
+        $motdepasse_crypte = password_hash($motdepasse, PASSWORD_DEFAULT); //cryptage du mdp (comme avec la méthode MD() mais en plus fort, suis les nouvelles normes de sécu)
     
     //----INSERT implémentation du nouveau membre dans la TABLE membre (version implémentation super sécurisée)
-    $requete="INSERT INTO membre (id, pseudo, motdepasse, nom, prenom, email, id_categorie, dateinscrit)
-    VALUES (NULL, ?, ?, ?, ?, ?, ?, NOW())"; //la fonction MD() chiffre le mot de passe
+    $requete="INSERT INTO mb (id, nom, prenom, pseudo, mail, mdp, dateinscrit)
+    VALUES (NULL, ?, ?, ?, ?, ?, NOW())"; 
     $reponse=$pdo->prepare($requete);
-    $reponse->execute(array($pseudo, $motdepasse_crypte, $nom, $prenom, $email, $id_categorie));
+    $reponse->execute(array($nom, $prenom, $pseudo, $email, $motdepasse_crypte));
     $reussi = true;
     }
 ?>
@@ -51,7 +49,6 @@
                             <th>email</th>
                             <th>prénom</th>
                             <th>nom</th>
-                            <th>catégorie sociale</th>
                         </tr>
                         <tr>
                         <?php
