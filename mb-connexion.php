@@ -4,7 +4,7 @@
 ?>
 
 <!--==============================================================
-    Page de connexion
+    Page de connexion (pour les membres donc)
 ==============================================================-->
 <!DOCTYPE html>
 <html lang="fr">
@@ -16,10 +16,10 @@
     <!------------------------------------------------------>
     <body>
         <?php
-        if (empty($_SESSION['pseudo'])) 
+        if (empty($_SESSION['pseudo'])) //vérifie si le membre est déjà connecté
         {
         ?>
-        <form action="verifier-connexion.php" method="post">
+        <form action="mb-verifierConnexion.php" method="post">
             <fieldset>    
                 <p>Votre login            : <input type="text" name="pseudo" /></p>
                 <p>Votre mot de passe     : <input type="password" name="motdepasse" /></p>

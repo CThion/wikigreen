@@ -6,7 +6,7 @@ if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])){
     $pseudo = $_POST['pseudo'];
     $motdepasse = $_POST['motdepasse'];
     //---- récupération des membres avec le pseudo entré (normalement une seule entrée)
-    $requete = "SELECT * FROM membre WHERE pseudo = ?";
+    $requete = "SELECT * FROM mb WHERE pseudo = ?";
     $reponse = $pdo->prepare($requete);
     $reponse->execute(array($pseudo));
     //----
@@ -28,13 +28,13 @@ if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])){
     <!------------------------------------------------------>
     <body>
         <?php
-        // tester si un enregistrement existe
         // (on suppose qu'un même pseudo n'existe qu'une fois, donc qu'il n'y a qu'une entrée dans enregistrement)
-        if ($nombreReponses > 0)
+        if ($nombreReponses > 0) // teste si un enregistrement existe
         {
-            // on vérifie si le mot de passe de la base de données = au mot de passe du formulaire
-            $motdepasse_crypte = $enregistrements[0]['motdepasse']; //récupération du mdp dans la bdd
-            if (password_verify($motdepasse, $motdepasse_crypte)) //vérification
+            //-- on vérifie si le mot de passe de la base de données = au mot de passe du formulaire
+            $motdepasse_crypte = $enregistrements[0]['mdp']; //récupération du mdp dans la bdd
+
+            if (password_verify($motdepasse, $motdepasse_crypte)) //--si le mdp est le bon
             {
                 ?>
                 <h2>Bienvenu <?php echo $pseudo;?> ! On est content de vous revoir !</h2>
@@ -49,15 +49,15 @@ if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])){
             {
                 ?>
                 <p>Mot de passe incorrecte, veuillez vérifier vos entrées</p>
-                <a href="connexion.php">Retour à l'écran de connexion</a>
+                <a href="mb-connexion.php">Retour à l'écran de connexion</a>
                 Retour au <a href="sommaire.php">sommaire</a>
                 <?php
             }
         }
-        else{
+        else{ //-- si on a aucun enregistrement (donc aucune entrée avec son login)
             ?>
             <p>Aucun compte enregistré avec ce pseudonyme, veuillez vérifier vos entrées ou créez-vous un compte</p>
-            <a href="connexion.php">Retour à l'écran de connexion</a>
+            <a href="mb-connexion.php">Retour à l'écran de connexion</a>
             Retour au <a href="sommaire.php">sommaire</a>
             <?php
         }
