@@ -26,7 +26,7 @@
             <h2>Fonctionnalités</h2>
             <ul>
                 <li><a href="secret.php">Page secrete</a></li>
-                <li><a href="mb-infos.php">Info personnel</a></li>
+                <li><a href="mb-pagePerso.php">Info personnel</a></li>
                 <li><a href="afficher.php">Liste des pseudos des membres</a></li>
             </ul>
     </body>
