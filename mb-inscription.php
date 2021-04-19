@@ -1,23 +1,14 @@
-<?php session_start(); ?>
-<!--==============================================================-->
-<!-- affichage d'un formulaire d'inscription pour l'ajout d'un nouveau membre -->
-<!--==============================================================-->
 <?php
+session_start();
 require_once(".settings\connexion_base.php");
+include "all-debutpage.inc.php";
 ?>
 
 <!--==============================================================-->
-<!DOCTYPE html>
-<html lang="fr">
+<!-- affichage d'un formulaire d'inscription pour l'ajout d'un nouveau membre -->
+<!--==============================================================-->
 
-<head>
-    <meta charset="utf-8" />
-    <title> Inscription d'un nouveau membre </title>
-</head>
-
-<!------------------------------------------------------>
-
-<body>
+<main>
     <h2> Inscription d'un nouveau membre </h2>
 
     <form action="mb-enregistrer.php" method="post">
@@ -35,6 +26,7 @@ require_once(".settings\connexion_base.php");
         </fieldset>
     </form>
     Retour au <a href="sommaire.php">sommaire</a>
-</body>
+</main>
 
-</html>
+<!------------------------------------------------------>
+<?php include "all-finpage.inc.php"; ?>

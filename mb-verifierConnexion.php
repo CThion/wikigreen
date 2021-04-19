@@ -1,6 +1,16 @@
 <?php
 session_start();
 require_once(".settings\connexion_base.php");
+include "all-debutpage.inc.php";
+?>
+
+<!--==============================================================
+    page de vérifivation des informations de la page de connexion pour se connecter
+==============================================================-->
+
+<?php
+session_start();
+require_once(".settings\connexion_base.php");
 
 if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])) {
     $pseudo = $_POST['pseudo'];
@@ -15,20 +25,7 @@ if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])) {
 }
 ?>
 
-<!--==============================================================
-    page de vérifivation des informations de la page de connexion pour se connecter
-==============================================================-->
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8" />
-    <title> verification de connexion </title>
-</head>
-
-<!------------------------------------------------------>
-
-<body>
+<main>
     <?php
     // (on suppose qu'un même pseudo n'existe qu'une fois, donc qu'il n'y a qu'une entrée dans enregistrement)
     if ($nombreReponses > 0) // teste si un enregistrement existe
@@ -62,7 +59,7 @@ if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])) {
     <?php
     }
     ?>
+</main>
 
-</body>
-
-</html>
+<!------------------------------------------------------>
+<?php include "all-finpage.inc.php"; ?>

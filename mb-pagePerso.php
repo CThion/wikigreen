@@ -1,7 +1,17 @@
 <?php
 session_start();
-require_once(".settings\connexion_base.php"); //connexion base
+require_once(".settings\connexion_base.php");
+include "all-debutpage.inc.php";
+?>
 
+<!--============================================================== 
+    page personnel d'un membre donné (par son id). Peut accéder à ses informations personnelles, ainsi qu'aux informations sur son activité :
+        - nombre de contributions
+        - article qu'il a modifié
+        - articles favoris
+==============================================================-->
+
+<?php
 //-- récupération id du membre
 $id = 0;
 if (!empty($_SESSION['id_membre'])) {
@@ -14,26 +24,9 @@ $reponse_membre = $pdo->prepare($requete_membre);
 $reponse_membre->execute();
 $enregistrements_membre = $reponse_membre->fetchAll(); // récupérer tous les enregistrements dans un tableau. On a normalement un seul enregistrement, correspondant à l'entrée du membre dans la bdd (à l'id donné)
 //print_r($enregistrements_membre);
-
 ?>
 
-<!--============================================================== 
-    page personnel d'un membre donné (par son id). Peut accéder à ses informations personnelles, ainsi qu'aux informations sur son activité :
-        - nombre de contributions
-        - article qu'il a modifié
-        - articles favoris
-==============================================================-->
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8" />
-    <title> Information de membre </title>
-</head>
-
-<!------------------------------------------------------>
-
-<body>
+<main>
     <?php
     if (!empty($_SESSION['id_membre'])) { //--si membre connecté
     ?>
@@ -68,6 +61,7 @@ $enregistrements_membre = $reponse_membre->fetchAll(); // récupérer tous les e
     <?php
     } 
     ?>
-</body>
+</main>
 
-</html>
+<!------------------------------------------------------>
+<?php include "all-finpage.inc.php"; ?>

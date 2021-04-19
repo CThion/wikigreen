@@ -1,11 +1,12 @@
 <?php
 session_start();
 require_once(".settings\connexion_base.php");
-$donnees['menu'] = "Accueil";
-$donnees['titre_page'] = "Page d'accueil";
 include "all-debutpage.inc.php";
 ?>
 
+<!--==============================================================
+    Page d'accueil du site
+==============================================================-->
 
 <main role="main">
   <div class="container">
@@ -21,16 +22,29 @@ include "all-debutpage.inc.php";
         Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.
         Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.
         Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-
       </div>
       <div class="col-md-4">
-        Rien que pour vous
+        <h1> Rien que pour vous </h1>
+        <h2>Gestion de connexion</h2>
+        <ul>
+          <li><a href="mb-inscription.php">Inscription d'un nouveau membre</a></li>
+          <li><a href="mb-connexion.php">Connexion</a></li>
+          <li><a href="mb-deconnexion.php">Deconnexion</a></li>
+        </ul>
+        <h2>Fonctionnalités</h2>
+        <ul>
+          <li><a href="secret.php">Page secrete</a></li>
+          <li><a href="mb-pagePerso.php">Info personnel</a></li>
+          <li><a href="afficher.php">Liste des pseudos des membres</a></li>
       </div>
+        <h1> Troisième colonne</h1>
       <div class="col-md-4">
-        Troisième colonne
+        
+        </ul>
       </div>
     </div>
   </div>
 </main>
 
+<!------------------------------------------------------>
 <?php include "all-finpage.inc.php"; ?>

@@ -1,22 +1,14 @@
 <?php
 session_start();
 require_once(".settings\connexion_base.php");
+include "all-debutpage.inc.php";
 ?>
 
 <!--==============================================================
     Page de connexion (pour les membres donc)
 ==============================================================-->
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="utf-8" />
-    <title> page de connexion </title>
-</head>
-
-<!------------------------------------------------------>
-
-<body>
+<main>
     <?php
     if (empty($_SESSION['pseudo'])) //vérifie si le membre est déjà connecté
     {
@@ -36,6 +28,7 @@ require_once(".settings\connexion_base.php");
         Retour au <a href="sommaire.php">sommaire</a>
     <?php }
     ?>
-</body>
+</main>
 
-</html>
+<!------------------------------------------------------>
+<?php include "all-finpage.inc.php"; ?>
