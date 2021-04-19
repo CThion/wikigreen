@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once("connexion_base.php");
+require_once(".settings\connexion_base.php");
+include "all-debutpage.inc.php";
 ?>
 
 <!--==============================================================
