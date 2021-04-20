@@ -1,4 +1,69 @@
 .btn
 {
-font-size: 30px;
+font-size: 20px;
 }
+.titresec
+{
+	font-family: Arial Black;
+	text-decoration: underline black;
+}
+.titrethm
+{
+	font-family: Times New Roman;
+}
+
+.titreart
+{
+	font-family: Helvetica;
+}
+
+.navbar-brand 
+{
+	font-family: Helvetica;
+	font-style: Italic;
+	font-size: 1em;
+
+}
+.container-fluid 
+{
+	background-color: #66E846;
+	border-color: blue;
+	border-width: 2px;
+	border-style : solid;
+}
+#navbarDropdown
+{
+	border-color: blue;
+	border-width: 2px;
+	border-style : solid;
+}
+
+.list-group-item
+{
+	border-width: 2px;
+	border-color: red;
+	border-style : solid;
+}
+#test2
+{
+	font-family: University Roman;
+	border-color: #399014;
+	border-width: 2px;
+	border-style : solid;
+	border-collapse: collapse;
+}
+#Connexion
+{
+	text-align: left;
+	border-color: red;
+	border-width: 2px;
+	border-style: solid;
+}
+#Citation
+{
+	font-family: Helvetica;
+	/* font-size: 30px; */
+	font-weight: bold;
+	color: red;
+}
+	
