@@ -10,7 +10,7 @@ include "all-debutpage.inc.php";
 
 <?php
 //$id_art = $_POST["id_art"]; //récupération de l'idée d'article spécifié
-$id_art =3; // A SUPPRIMER
+$id_art = 3; // A SUPPRIMER
 //---- table art
 $requete_art = "SELECT * FROM art WHERE id = ?"; //récupération de l'article à l'id donné
 $reponse_art = $pdo->prepare($requete_art);
@@ -25,34 +25,55 @@ $reponse_ref->execute(array($id_ref)); //ce qui va dans le "?" de la requête
 $ref = $reponse_ref->fetchAll(); // récupérer tous les enregistrements dans un tableau
 $nbrep_ref = count($ref); // connaitre le nombre d'enregistrements
 //---- table thm
-$id_thm =$art[0]["id_thm"];
+$id_thm = $art[0]["id_thm"];
 $requete_thm = "SELECT * FROM thm WHERE id = ?"; //récupération de l'article à l'id donné
 $reponse_thm = $pdo->prepare($requete_thm);
 $reponse_thm->execute(array($id_thm));
 $thm = $reponse_thm->fetchAll(); // récupérer tous les enregistrements dans un tableau
 $nbrep_thm = count($art); // connaitre le nombre d'enregistrements
-
+//---- table sec
+$id_sec = $thm[0]["id_sec"];
+$requete_sec = "SELECT * FROM sec WHERE id = ?"; //récupération de l'article à l'id donné
+$reponse_sec = $pdo->prepare($requete_sec);
+$reponse_sec->execute(array($id_sec));
+$sec = $reponse_sec->fetchAll(); // récupérer tous les enregistrements dans un tableau
+$nbrep_sec = count($art); // connaitre le nombre d'enregistrements
 
 ?>
 
 <main>
-    <h1> Merci de contribuer au site !! </h1>
     <div class="container">
-        <!-- version actuelle de l'article -->
+        <!-- l'article en lui même -->
         <div class="col">
-            <div class="col-md-4">
-                <h3><?php echo $art[0]["titre"]; ?></h3>
+            <!-- titre de section -->
+            <div class="col">
+                <h1 class="titresec">Section : <?php echo $sec[0]["titre"]; ?></h1>
             </div>
-            <div class="col-md-4">
-                <h4><?php echo $thm[0]["titre"]; ?></h4>
+            <!-- titre du thème -->
+            <div class="col">
+                <h1 class="titrethm">Thème : <?php echo $thm[0]["titre"]; ?></h1>
             </div>
-            <div class="col-md-4">
+            <!-- titre de l'article -->
+            <div class="col">
+                <h1 class="titreart">Article : <?php echo $art[0]["titre"]; ?></h1>
+            </div>
+            <!-- stat de l'article -->
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">Dernière modification : X</li>
+                <li class="list-group-item">Nombre de modification : Y</li>
+                <li class="list-group-item">Nombre de contributeur : Z</li>
+                <li class="list-group-item">Note : U</li>
+            </ul>
+            <!-- image de l'article -->
+            <div class="col">
                 <p><?php echo $art[0]["image"]; ?></p>
             </div>
-            <div class="col-md-4">
+            <!-- texte de l'article -->
+            <div class="col">
                 <p><?php echo $art[0]["texte"]; ?></p>
             </div>
-            <div class="col-md-4">
+            <!-- référence de l'article -->
+            <div class="col">
                 <p><?php echo $ref[0]["titre"]; ?></p>
             </div>
         </div>
