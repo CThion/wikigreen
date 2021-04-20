@@ -9,36 +9,49 @@ include "all-debutpage.inc.php";
 ==============================================================-->
 
 <?php
+//----récupération des info dans la bdd qui nous intéressent----
 //$id_art = $_POST["id_art"]; //récupération de l'idée d'article spécifié
-$id_art = 3; // A SUPPRIMER
+$id_art = 7; // A SUPPRIMER
 //---- table art
 $requete_art = "SELECT * FROM art WHERE id = ?"; //récupération de l'article à l'id donné
 $reponse_art = $pdo->prepare($requete_art);
 $reponse_art->execute(array($id_art)); //ce qui va dans le "?" de la requête
 $art = $reponse_art->fetchAll(); // récupérer tous les enregistrements dans un tableau
 $nbrep_art = count($art); // connaitre le nombre d'enregistrements
+//---- root : valeur contante de l'article (pour parcourir les versions)
+$root = $art[0]["root"];
 //---- table ref
 $id_ref = $art[0]["id_ref"]; //recherche de la clef étrangère dans l'article
-$requete_ref = "SELECT * FROM ref WHERE id = ?"; //récupération de l'article à l'id donné
+$requete_ref = "SELECT * FROM ref WHERE id = ?"; 
 $reponse_ref = $pdo->prepare($requete_ref);
 $reponse_ref->execute(array($id_ref)); //ce qui va dans le "?" de la requête
 $ref = $reponse_ref->fetchAll(); // récupérer tous les enregistrements dans un tableau
 $nbrep_ref = count($ref); // connaitre le nombre d'enregistrements
 //---- table thm
 $id_thm = $art[0]["id_thm"];
-$requete_thm = "SELECT * FROM thm WHERE id = ?"; //récupération de l'article à l'id donné
+$requete_thm = "SELECT * FROM thm WHERE id = ?";
 $reponse_thm = $pdo->prepare($requete_thm);
 $reponse_thm->execute(array($id_thm));
 $thm = $reponse_thm->fetchAll(); // récupérer tous les enregistrements dans un tableau
 $nbrep_thm = count($art); // connaitre le nombre d'enregistrements
 //---- table sec
 $id_sec = $thm[0]["id_sec"];
-$requete_sec = "SELECT * FROM sec WHERE id = ?"; //récupération de l'article à l'id donné
+$requete_sec = "SELECT * FROM sec WHERE id = ?";
 $reponse_sec = $pdo->prepare($requete_sec);
 $reponse_sec->execute(array($id_sec));
 $sec = $reponse_sec->fetchAll(); // récupérer tous les enregistrements dans un tableau
 $nbrep_sec = count($art); // connaitre le nombre d'enregistrements
-
+//---- autres requêtes
+//-- nbmb_art : nombre de membre ayant contribué sur cet article
+$requete_nbmb_art = "SELECT COUNT(DISTINCT mb.id) FROM mb, art WHERE art.root=? AND art.id_mb=mb.id"; 
+$reponse_nbmb_art = $pdo->prepare($requete_nbmb_art);
+$reponse_nbmb_art->execute(array($root));
+$nbmb_art = $reponse_nbmb_art->fetchAll(); 
+//-- nbmodif_art : nombre de versions de l'article (= nombre de modifs)
+$requete_nbmodif_art = "SELECT COUNT(*) FROM art WHERE art.root=?"; 
+$reponse_nbmodif_art = $pdo->prepare($requete_nbmodif_art);
+$reponse_nbmodif_art->execute(array($root));
+$nbmodif_art = $reponse_nbmodif_art->fetchAll(); 
 ?>
 
 <main>
@@ -59,10 +72,9 @@ $nbrep_sec = count($art); // connaitre le nombre d'enregistrements
             </div>
             <!-- stat de l'article -->
             <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">Dernière modification : X</li>
-                <li class="list-group-item">Nombre de modification : Y</li>
-                <li class="list-group-item">Nombre de contributeur : Z</li>
-                <li class="list-group-item">Note : U</li>
+                <li class="list-group-item">Dernière modification : <?php echo $art[0]["date"]; ?></li>
+                <li class="list-group-item">Nombre de modification : <?php echo $nbmodif_art[0][0]; ?></li>
+                <li class="list-group-item">Nombre de contributeurs : <?php echo $nbmb_art[0][0]; ?></li>
             </ul>
             <!-- image de l'article -->
             <div class="col">
