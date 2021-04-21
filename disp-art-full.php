@@ -82,7 +82,7 @@ $nbmodif_art = $reponse_nbmodif_art->fetchAll();
             </div>
             <!-- texte de l'article -->
             <div class="col">
-                <p><?php echo $art[0]["texte"]; ?></p>
+                <p class="Texte"><?php echo $art[0]["texte"]; ?></p>
             </div>
             <!-- référence de l'article -->
             <div class="col">

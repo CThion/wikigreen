@@ -92,7 +92,7 @@ $nbmodif_art = $reponse_nbmodif_art->fetchAll();
                             <!-- image art -->
                             <img src="images/logo/logo-wikigreen/logo-1/logo300.png" alt="logo300" width="300" height="300" />
                             <!-- texte art -->
-                            <p><?php echo $art[$i]["texte"]; ?></p>
+                            <p class="Texte"> <?php echo $art[$i]["texte"]; ?> </p>
                         </div>
                     <?php
                     }
