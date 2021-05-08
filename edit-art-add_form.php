@@ -105,11 +105,11 @@ $nbrep_typeart = count($typeart); // connaitre le nombre d'enregistrements
                 <input type="text" name="titre" class="form-control" id="inputAddress">
             </div>
             <!-- image -->
-            <!-- <div class="input-group mb-3">
+            <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupFile01">Image</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
                 <input type="file" name="image" class="form-control" id="inputGroupFile01">
-            </div> -->
+            </div>
             <!-- texte -->
             <div class="input-group">
                 <span class="input-group-text">Résumé de l'article</span>

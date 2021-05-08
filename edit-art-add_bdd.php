@@ -32,7 +32,8 @@ $maxartroot = $reponse_artroot->fetchAll(); // récupérer tous les enregistreme
             !empty($_POST['titre']) &&
             !empty($_POST['texte']) &&
             !empty($_POST['typeart']) &&
-            !empty($_POST['consent'])
+            !empty($_POST['consent']) &&
+            !empty($_FILES['image']) //vérifie si une image est bien fournie
         ) {
             echo "<h2>votre article a bien été ajouté !</h2>";
             
@@ -67,39 +68,34 @@ $maxartroot = $reponse_artroot->fetchAll(); // récupérer tous les enregistreme
             $reponse->execute();
 
 
-            // code du prochain exercice ici
+            //---- td12 p3 : gestion image de l'article : enregistrement dans dossier \image_upload-art 
+            print_r($_FILES['image']); // Sortir cette ligne quand tout va bien
+            print_r($_FILES); // Sortir cette ligne tout va bien
+            if (!empty($_FILES['image']['tmp_name'])) {
+                 $size = getimagesize($_FILES['image']['tmp_name']);
+                 print_r($size);
+                 echo "Filetype : " . $size['mime'];
+                 if ($size['mime'] == "image/jpeg") {
+                     $uploaddir = $_SERVER['DOCUMENT_ROOT'] . "/wikigreen/images/mb-image_upload/image_upload-art/";
+                     $uploadfile = "image_art-" . $id_art . ".jpg"; //nommage de l'article avec comme suffix l'id de l'article qui vient d'être ajouté
+                     if (move_uploaded_file($_FILES['image']['tmp_name'], $uploaddir . $uploadfile)) {
+                         echo "<p>Votre image d'article a bien été ajouté : " . $uploadfile . "</p>";
+                     } else {
+                         echo "<p>Probleme sur le serveur : " . $uploaddir . "</p>";
+                     }
+                 } 
+                 else {
+                     echo "<p>Pas le bon type de fichier : " . $size['mime'] . "</p>";
+                 }
+             } 
+             else {
+                 echo "<p>Pas de fichier spécifié.</p>";
+             }
         }
-
-        //-- td12 p3 : gestion image de l'article : enregistrement dans dossier \image_upload-art 
-        // 
-        // print_r($_FILES['fichier']); // Sortir cette ligne quand tout va bien
-        // print_r($_FILES); // Sortir cette ligne tout va bien
-        // if (!empty($_FILES['fichier']['tmp_name'])) {
-        //     $size = getimagesize($_FILES['fichier']['tmp_name']);
-        //     print_r($size);
-        //     echo "Filetype : " . $size['mime'];
-        //     if ($size['mime'] == "image/jpeg") {
-        //         $uploaddir = $_SERVER['DOCUMENT_ROOT'] . "/cswd/td12/images_upload/";
-        //         $uploadfile = "paysage-" . $dernier_id . ".jpg";
-        //         if (move_uploaded_file($_FILES['fichier']['tmp_name'], $uploaddir . $uploadfile)) {
-        //             echo "<p>Votre image du paysage a bien été ajouté : " . $uploadfile . "</p>";
-        //         } else {
-        //             echo "<p>Probleme sur le serveur : " . $uploaddir . "</p>";
-        //         }
-        //     } else {
-        //         echo "<p>Pas le bon type de fichier : " . $size['mime'] . "</p>";
-        //     }
-        // } else {
-        //     echo "<p>Pas de fichier spécifié.</p>";
-        // }
-
         else { //si il manque quelque chose :
-        ?>
-            <h3>Il semble que vous ayez oublié quelque chose ! Faite bien attention à renseigner tous les champs pour pouvoir enregistrer votre contribution ! :-)</h3>
-        <?php
+            echo "<h3>Il semble que vous ayez oublié quelque chose ! Faite bien attention à renseigner tous les champs pour pouvoir enregistrer votre contribution ! :-)</h3>";
         }
         ?>
-
 
     </div>
 </main>
