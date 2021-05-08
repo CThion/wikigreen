@@ -41,13 +41,13 @@
 		</div>
 		 <div class="p-2 bd-highlight">
 		 <div class="alert alert-primary" role="alert">
-		 <a href="#" class="alert-link">Collaborer</a>
+		 <a href="collaborer.php" class="alert-link">Collaborer</a>
 		 </div>
 		 </div>
 		 
 		 <div class="p-2 bd-highlight">
 		 <div class="alert alert-primary" role="alert">
-		 <a href="#" class="alert-link">Recherches</a>
+		 <a href="recherches.php" class="alert-link">Recherches</a>
 		 </div>
 		</div>
 		</div>
