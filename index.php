@@ -36,11 +36,11 @@ include "all-debutpage.inc.php";
           <li><a href="secret.php">Page secrete</a></li>
           <li><a href="mb-pagePerso.php">Info personnel</a></li>
           <li><a href="afficher.php">Liste des pseudos des membres</a></li>
-      </div>
-        <h1> Troisième colonne</h1>
-      <div class="col-md-4">
-        
         </ul>
+        <h1> Contribuer</h1>
+        <div class="col-md-4">
+        <a href="edit-art-add_form.php">Ajouter un article</a>
+        </div>
       </div>
     </div>
   </div>
