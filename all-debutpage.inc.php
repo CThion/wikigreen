@@ -18,38 +18,42 @@
 
 <body>
   <header>
-	
+    <!-- ressource entête navbar : https://getbootstrap.com/docs/5.0/components/navbar/ -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	
       <div class="container-fluid">
-	  <img src="images/logo/logo-wikigreen/logo-1/logo300.png" alt="Logo du site" width="150" height="100" /> <a class="navbar-brand" href="">
-	  
-         
-	 
-		
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	  
-        <li class="nav-item">
-          <a class="nav-link active" id="centre" aria-current="page" href="Qui-sommes-nous.php"> Qui-sommes nous ? </a>
-        </li>
-		
-		<li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="collaborer.php"> Collaborer </a>
-        </li>
-		
-		<li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="recherche.php">Recherches</a>
-        </li>
-      
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-	  </div>
-	  
-	  
+        <!-- logo du site -->
+        <a class="navbar-brand" href="index.php"><img src="images/logo/logo-wikigreen/logo-1/logo300.png" alt="Logo du site" width="150" height="100" /></a>
+        <!-- bouton hamburger -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- différents liens de la bare de nav supérieure -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- bare de recherche de contenu (art, ref, thm...) -->
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Trouver une ressource" aria-label="rechercher">
+            <button class="btn btn-outline-success" type="submit">Go!</button>
+          </form>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="gen-recherche_avance.php">Recherche avancée</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="gen-collaborer.php"> Collaborer </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="centre" aria-current="page" href="gen-qui_sommes_nous.php"> Qui-sommes nous ? </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="centre" aria-current="page" href="mb-connexion.php"> Connexion </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="centre" aria-current="page" href="mb-pagePerso.php"> Espace personnel </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
     </nav>
   </header>
