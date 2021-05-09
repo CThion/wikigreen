@@ -28,8 +28,8 @@ font-size: 20px;
 }
 .container-fluid 
 {
-	background-color: #66E846;
-	border-color: blue;
+	background-color: #0AC665;
+	border-color: red;
 	border-width: 2px;
 	border-style : solid;
 }
@@ -49,43 +49,25 @@ font-size: 20px;
 	color: black;
 }
 
-#list-tab
+#centre
 {
-	border-width: 3px;
+	background-color: purple;
 	border-color: #DA2FCB;
-	border-style : solid;
-	border-collapse: collapse;
-}
-
-#navbarDropdown
-{
-	border-color: red;
 	border-width: 2px;
 	border-style : solid;
+	
 }
-
-#test2
-{
-	font-family: University Roman;
-	border-color: #399014;
-	border-width: 2px;
-	border-style : solid;
-	border-collapse: collapse;
-}
-#Connexion
+.container
 {
 	text-align: left;
-	border-color: #4BFDE5;
-	border-width: 2px;
-	border-style: solid;
+	font-style: italic;
+	padding-bottom: 0;
+
+	text-indent: 10px;
+	border-color: #EC13A7 ;
+	border-width: 1px;
+	border-style : solid;
 }
-#Citation
-{
-	font-family: Helvetica;
-    /* font-size: 70px; */
-	font-weight: bold;
-	color: purple;
-	text-transform: uppercase;
-}
+
 
 	

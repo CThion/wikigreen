@@ -1,22 +1,24 @@
 <footer class="container">
-    <p>Mention légales , nous contacter aux adresses suivantes : axelplanteyveux@gmail.com </p>
-	<p> Vous trouverez ci dessous les principaux contributeurs à la création de ce site </p>
+	<br/>
+	
+    <p id="pdp">Mention légales , nous contacter aux adresses suivantes : axelplanteyveux@gmail.com </p>
+	 <p id="pdp"> Vous trouverez ci dessous les principaux contributeurs à la création de ce site </p>
 	<table>
 <tr>
  <th>Prénom</th>
-<th>Nom</th>
+<th>     Nom</th>
 </tr>
 <tr>
 <td>Axel </td>
-<td>Plantey--Veux</td>
+<td>    Plantey--Veux</td>
  </tr>
 <tr>
 <td>Thomas</td>
- <td>Besognet</td>
+ <td>    Besognet</td>
  </tr>
 <tr>
  <td>Clément </td>
- <td>Thion</td>
+ <td>    Thion</td>
 </tr>
 </table>
 </footer>
