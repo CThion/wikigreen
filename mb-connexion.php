@@ -8,7 +8,9 @@ include "all-debutpage.inc.php";
     Page de connexion (pour les membres donc)
 ==============================================================-->
 
-<main>
+<main role="main">
+<div class="container">
+<div class="col">
     <?php
     if (empty($_SESSION['pseudo'])) //vérifie si le membre est déjà connecté
     {
@@ -28,6 +30,8 @@ include "all-debutpage.inc.php";
         Retour au <a href="sommaire.php">sommaire</a>
     <?php }
     ?>
+    </div>
+    </div>
 </main>
 
 <!------------------------------------------------------>

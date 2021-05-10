@@ -32,35 +32,39 @@ if ( //si tout est bien renseigné dans le formulaire de mb-inscription.php ...
 }
 ?>
 
-<main>
-    <?php
-    if ($reussi == true) {
-    ?>
-        <h1> Bienvenu parmis nous ! </h1>
-        <h2>Récapitulatif de votre inscription</h2>
-        <table>
-            <tr>
-                <!-- Entête -->
-                <th>pseudo</th>
-                <th>email</th>
-                <th>prénom</th>
-                <th>nom</th>
-            </tr>
-            <tr>
-                <?php
-                for ($i = 0; $i < count($infoMembre); $i++) {
-                    echo '<td>' . $infoMembre[$i] . '</td>';
-                }
-                ?>
-            </tr>
-            <table>
-                <p>
-                    <a href='sommaire.php'>Retour au sommaire</a>
-                </p>
-            <?php } else { ?>
-                <p>Veuillez svp renseigner toutes les informations.</p>
-                Retour au <a href="sommaire.php"> sommaire</a>
-            <?php } ?>
+<main role="main">
+    <div class="container">
+        <div class="col">
+            <?php
+            if ($reussi == true) {
+            ?>
+                <h1> Bienvenu parmis nous ! </h1>
+                <h2>Récapitulatif de votre inscription</h2>
+                <table>
+                    <tr>
+                        <!-- Entête -->
+                        <th>pseudo</th>
+                        <th>email</th>
+                        <th>prénom</th>
+                        <th>nom</th>
+                    </tr>
+                    <tr>
+                        <?php
+                        for ($i = 0; $i < count($infoMembre); $i++) {
+                            echo '<td>' . $infoMembre[$i] . '</td>';
+                        }
+                        ?>
+                    </tr>
+                    <table>
+                        <p>
+                            <a href='sommaire.php'>Retour au sommaire</a>
+                        </p>
+                    <?php } else { ?>
+                        <p>Veuillez svp renseigner toutes les informations.</p>
+                        Retour au <a href="sommaire.php"> sommaire</a>
+                    <?php } ?>
+        </div>
+    </div>
 </main>
 
 

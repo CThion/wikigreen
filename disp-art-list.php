@@ -19,7 +19,7 @@ $art = $reponse_art->fetchAll(); // récupérer tous les enregistrements dans un
 $nbrep_art = count($art); // connaitre le nombre d'enregistrements
 ?>
 
-<main>
+<main role="main">
     <div class="container">
         <!-- fait avec bootstrap/component/listgroup -->
         <div class="row">

@@ -15,8 +15,12 @@ include "all-debutpage.inc.php";
         - ...
 ==============================================================-->
 
-<main>
-    <h1>Moteur de recherche :</h1>
+<main role="main">
+    <div class="container">
+        <div class="col">
+            <h1>Moteur de recherche :</h1>
+        </div>
+    </div>
 </main>
 
 <!------------------------------------------------------>

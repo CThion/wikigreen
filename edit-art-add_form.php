@@ -41,7 +41,7 @@ $typeart = $reponse_typeart->fetchAll(); // récupérer tous les enregistrements
 $nbrep_typeart = count($typeart); // connaitre le nombre d'enregistrements
 ?>
 
-<main>
+<main role="main">
     <div class="container">
         <form action="edit-art-add_bdd.php" enctype="multipart/form-data" method="post" class="row g-2">
             <!-- ATTENTION !! L'indiçage dans les tables mysql commence à partir de 1, mais dans les tableaux php il commence à 0 !! D'où le décalage dans les boucles for et les <value> -->

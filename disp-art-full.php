@@ -62,7 +62,7 @@ $reponse_nbmodif_art->execute(array($artroot));
 $nbmodif_art = $reponse_nbmodif_art->fetchAll(); 
 ?>
 
-<main>
+<main role="main">
     <div class="container">
         <div class="col">
             <!-- titre de section -->
