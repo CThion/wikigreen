@@ -32,11 +32,11 @@ include "all-debutpage.inc.php";
           <li><a href="mb-deconnexion.php">Deconnexion</a></li>
           <li><a href="mb-pagePerso.php">Info personnel</a></li>
         </ul>
-        <h2>Ressources</h2>
+        <h2 id="fonction">Ressources</h2>
         <ul>
           <li><a href="disp-art-list.php">Afficher tous les articles</a></li>
         </ul>
-        <h1> Contribuer</h1>
+        <h1 id="contribuer"> Contribuer</h1>
         <a href="edit-art-add_form.php">Ajouter un article</a>
       </div>
     </div>
