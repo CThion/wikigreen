@@ -101,6 +101,8 @@ $nbrep_cmt = count($cmt);
                     <li class="list-group-item">Dernière modification : <?php echo $art[0]["dateajout"]; ?></li>
                     <li class="list-group-item">Nombre de modification : <?php echo $nbmodif_art[0][0]; ?></li>
                     <li class="list-group-item">Nombre de contributeurs : <?php echo $nbmb_art[0][0]; ?></li>
+                    <!-- bouton pour proposer une modification de l'article -->
+                    <li class="list-group-item"><a class="btn btn-primary" href=<?php echo "edit-art-modif_form.php?id_art=".$art[0]["id"]; ?> role="button">Améliorer cet article !</a></li>
                 </ul>
                 <!-- image de l'article -->
                 <div class="col">
@@ -137,7 +139,7 @@ $nbrep_cmt = count($cmt);
                     </div>
                     <!-- bouton de validation -->
                     <div class="input-group col-md-12">
-                        <button class="btn btn-primary" type="submit">Ajouter ce nouvel article !</button>
+                        <button class="btn btn-primary" type="submit">Publier</button>
                     </div>
                 </form>
             </div>
@@ -156,6 +158,14 @@ $nbrep_cmt = count($cmt);
                         $reponse_mb->execute(array($id_mb));
                         $mb = $reponse_mb->fetchAll();
                         $nbrep_mb = count($mb);
+                        //--table art, pour récupérer la date (version) de l'article correspondant au commentaire
+                        $requete_versionart = "SELECT art.dateajout FROM cmt, cmt_art, art
+                                            WHERE cmt.id = cmt_art.id_cmt
+                                            AND cmt_art.id_art = art.id
+                                            AND cmt.id=?"; //récupération toute la table membre
+                        $reponse_versionart = $pdo->prepare($requete_versionart);
+                        $reponse_versionart->execute(array($cmt[$i]['id']));
+                        $versionart = $reponse_versionart->fetchAll();
                     ?>
 
                         <a class="list-group-item list-group-item-action">
@@ -167,7 +177,7 @@ $nbrep_cmt = count($cmt);
                             </div>
                             <!-- le texte du commentaire -->
                             <p class="mb-1"><?php echo $cmt[$i]['texte']; ?></p>
-                            <small>And some small print.</small>
+                            <small>Pour version du <?php echo $versionart[0]['dateajout']; ?> de l'article</small>
                         </a>
                     <?php } ?>
 
