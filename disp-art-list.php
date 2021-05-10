@@ -61,7 +61,7 @@ $nbrep_art = count($art); // connaitre le nombre d'enregistrements
                             <!-- bouton dirigeant vers l'article en grand  -->
                             <a class="btn btn-primary" href=<?php echo "disp-art-full.php?id_art=".$art[$i]["id"]; ?> role="button">Link</a>
                             <!-- image art -->
-                            <img src=<?php echo "images/mb-image_upload/image_upload-art/image_art-".$art[$i]["id"].".jpg"; ?> alt=<?php echo "image_article-".$art[$i]["id"]; ?> width="300" height="300" />
+                            <img src=<?php echo "images/mb-image_upload/image_upload-art/image_art-".$art[$i]["id"].".jpg"; ?> alt=<?php echo "image_article-".$art[$i]["id"]; ?> width="150" height="200" />
                             <!-- texte art -->
                             <p class="Texte"> <?php echo $art[$i]["texte"]; ?> </p>
                         </div>

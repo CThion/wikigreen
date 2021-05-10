@@ -18,7 +18,7 @@ include "all-debutpage.inc.php";
 <main role="main">
     <div class="container">
         <div class="col">
-            <h1>Moteur de recherche :</h1>
+            <h1 id="h1src">Moteur de recherche :</h1>
         </div>
     </div>
 </main>

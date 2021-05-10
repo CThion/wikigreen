@@ -80,6 +80,14 @@ font-size: 20px;
 	font-family: Times New Roman;
 	color: black;
 }
+.Texte2
+{
+	line-height: 1em;
+	text-indent: 20px;
+	text-align: justify;
+	font-family: Times New Roman;
+	color: black;
+}
 .container
 {
 	text-align: left;
@@ -135,3 +143,83 @@ font-size: 20px;
 	font-family: Windsor;
 	font-style: Italic;
 }
+#h2mb
+{
+	font-family: Arial Black;
+	font-weight: bold;
+	color: #F5B71C;
+}
+#nom
+{
+	font-family: Arial;
+	font-size: 1em;
+	font-weight: bold;
+
+}
+#prenom
+{
+	font-family: Arial;
+	font-size: 1em;
+	font-weight: bold;
+}
+#email
+{
+	font-family: Arial ;
+	font-size: 1em;
+	font-weight: bold;
+}
+#pseudo
+{
+	font-family: Arial ;
+	font-size: 1em;
+	font-weight: bold;
+}
+#mdp
+{
+	font-family: Arial ;
+	font-size: 1em;
+	font-weight: bold;
+
+}
+#h1src
+{
+	font-family: Times New Roman;
+	font-weight: bold;
+	color: #F77B07;
+}
+#login
+{
+	font-family: Arial ;
+	font-size: 1em;
+	font-weight: bold;
+	color: #A21EA9;
+}
+#Profil
+{
+	font-family: Times New Roman ;
+	font-size: 1em;
+	font-style: Italic;
+	color: #A21EA9;
+}
+#mdp2
+{
+	font-family: Arial ;
+	font-size: 1em;
+	font-weight: bold;
+	color: #A21EA9;
+}
+#h1collab
+{
+	font-family: Times New Roman;
+	font-weight: bold;
+	color: #F77B07;
+	text-decoration: underline red;
+}
+#h2collab
+{
+	font-family: Calibri;
+	color: #A92BAF;
+	text-decoration: underline #F77B07;
+}
+
+
