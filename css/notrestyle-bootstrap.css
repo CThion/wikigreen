@@ -29,7 +29,7 @@ font-size: 20px;
 .container-fluid 
 {
 	background-color: #0AC665;
-	border-color: red;
+	border-color: #23F3F0;
 	border-width: 2px;
 	border-style : solid;
 }
@@ -48,26 +48,56 @@ font-size: 20px;
 	font-family: Times New Roman;
 	color: black;
 }
-
-#centre
-{
-	background-color: purple;
-	border-color: #DA2FCB;
-	border-width: 2px;
-	border-style : solid;
-	
-}
 .container
 {
 	text-align: left;
 	font-style: italic;
 	padding-bottom: 0;
-
 	text-indent: 10px;
 	border-color: #EC13A7 ;
 	border-width: 1px;
 	border-style : solid;
 }
 
-
+#centre
+{
+	background-color: #991ED6;
+	border-color: #DA2FCB;
+	border-width: 2px;
+	border-style : solid;
 	
+}
+
+#fonction
+{
+	font-family: Sitka Text;
+	font-style: Italic;
+	
+}
+
+#Mois
+{
+	font-family: Caladea;
+	font-style: Italic;
+	text-indent: 20px;
+	
+}
+
+#connexion
+{
+	font-family: Constantia;
+	font-style: Italic;
+	
+}
+
+#Perso
+{
+	font-family: Bahnschrift Condensed;
+	font-style: Italic;
+	
+}
+#contribuer
+{
+	font-family: Arial;
+	font-style: Italic;
+}
