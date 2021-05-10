@@ -30,17 +30,14 @@ include "all-debutpage.inc.php";
           <li><a href="mb-inscription.php">Inscription d'un nouveau membre</a></li>
           <li><a href="mb-connexion.php">Connexion</a></li>
           <li><a href="mb-deconnexion.php">Deconnexion</a></li>
-        </ul>
-        <h2 id="fonction">Fonctionnalités</h2>
-        <ul>
-          <li><a href="secret.php">Page secrete</a></li>
           <li><a href="mb-pagePerso.php">Info personnel</a></li>
-          <li><a href="afficher.php">Liste des pseudos des membres</a></li>
         </ul>
-        <h1 id="contribuer"> Contribuer</h1>
-        <div class="col-md-4">
+        <h2>Ressources</h2>
+        <ul>
+          <li><a href="disp-art-list.php">Afficher tous les articles</a></li>
+        </ul>
+        <h1> Contribuer</h1>
         <a href="edit-art-add_form.php">Ajouter un article</a>
-        </div>
       </div>
     </div>
   </div>

@@ -39,6 +39,8 @@ $nbrep_art = count($art); // connaitre le nombre d'enregistrements
                                     <!-- titre -->
                                     <li class="list-group-item">Titre : <?php echo $art[$i]["titre"]; ?></li>
                                 </ul>
+                                <!-- bouton dirigeant vers article pleine écran -->
+                                
                             </div>
                         </a>
                     <?php
@@ -56,6 +58,8 @@ $nbrep_art = count($art); // connaitre le nombre d'enregistrements
                         <div class="tab-pane fade show" id=<?php echo "list-" . $i; ?> role="tabpanel" aria-labelledby=<?php echo "list-" . $i . "-list"; ?>>
                             <!-- titre art -->
                             <h1 class="titreart"><?php echo $art[$i]["titre"]; ?></h1>
+                            <!-- bouton dirigeant vers l'article en grand  -->
+                            <a class="btn btn-primary" href=<?php echo "disp-art-full.php?id_art=".$art[$i]["id"]; ?> role="button">Link</a>
                             <!-- image art -->
                             <img src=<?php echo "images/mb-image_upload/image_upload-art/image_art-".$art[$i]["id"].".jpg"; ?> alt=<?php echo "image_article-".$art[$i]["id"]; ?> width="300" height="300" />
                             <!-- texte art -->
