@@ -11,8 +11,7 @@ include "all-debutpage.inc.php";
 <?php
 //----récupération des info dans la bdd qui nous intéressent----
 
-//$id_art = $_POST["id_art"]; //récupération de l'idée d'article spécifié
-$id_art = 7; // A SUPPRIMER une fois lien fait avec disp-art-list.php
+$id_art = $_GET["id_art"]; //récupération de l'idée d'article spécifié
 
 //-- table art
 $requete_art = "SELECT * FROM art WHERE id = ?"; //récupération de l'article à l'id donné
@@ -86,7 +85,7 @@ $nbmodif_art = $reponse_nbmodif_art->fetchAll();
             </ul>
             <!-- image de l'article -->
             <div class="col">
-                <img src=<?php echo "images/image_thm/image_thm-".$art[0]['id_thm'].".jpg"; ?> alt=<?php echo "image_thm-".$art[0]['id_thm']; ?> width="300" height="300" />
+                <img src=<?php echo "images/mb-image_upload/image_upload-art/image_art-".$art[0]['id'].".jpg"; ?> alt=<?php echo "image_art-".$art[0]['id']; ?> width="300" height="300" />
             </div>
             <!-- texte de l'article -->
             <div class="col">
