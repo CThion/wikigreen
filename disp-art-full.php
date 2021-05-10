@@ -82,6 +82,7 @@ $nbrep_cmt = count($cmt);
         <div class="col">
 
             <!-- affichage de l'article en lui même -->
+
             <div class="col">
                 <!-- titre de section -->
                 <div class="col">
@@ -115,10 +116,36 @@ $nbrep_cmt = count($cmt);
                 </div>
             </div>
 
+            <!-- formulaire d'ajout de commentaires -->
+
+            <div class=col>
+                <form action="edit-cmt-add_bdd.php" method="post" class="row g-2">
+                    <!-- date de création de l'article affiché (pour lier le commentaire à la version de l'article) -->
+                    <input type="hidden" name="dateajout_art" value=<?php echo $art[0]['dateajout']; ?> />
+                    <input type="hidden" name="id_art" value=<?php echo $art[0]['id']; ?> />
+                    <!-- commentaire de l'utilisateur -->
+                    <div class="input-group">
+                        <span class="input-group-text">Laissez un commentaire !</span>
+                        <textarea name="texte" class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                    <!-- consent : consentement d'utilisation de données -->
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input name="consent" class="form-check-input mt-0" type="checkbox" value="1" aria-label="Checkbox for following text input">
+                        </div>
+                        <span class="input-group-text">Accepter que mes données soient sauvegarder pour identifiers cet article</span>
+                    </div>
+                    <!-- bouton de validation -->
+                    <div class="input-group col-md-12">
+                        <button class="btn btn-primary" type="submit">Ajouter ce nouvel article !</button>
+                    </div>
+                </form>
+            </div>
+
             <!-- affichage des commentaires -->
+
             <div class="col">
                 <h3>Commentaires</h3>
-
                 <!-- https://getbootstrap.com/docs/5.0/components/list-group/ partie custom content -->
                 <div class="list-group">
                     <?php for ($i = 0; $i < $nbrep_cmt; $i++) { //autant de tout de boucle que de commentaires  
