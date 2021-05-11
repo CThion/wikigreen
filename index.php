@@ -26,14 +26,14 @@ include "all-debutpage.inc.php";
       <div class="col-md-4">
         <h1 id="Perso"> Rien que pour vous </h1>
         <h2 id="connexion">Gestion de connexion</h2>
-        <ul>
-          <li><a href="mb-inscription.php">Inscription d'un nouveau membre</a></li>
-          <li><a href="mb-connexion.php">Connexion</a></li>
-          <li><a href="mb-deconnexion.php">Deconnexion</a></li>
-          <li><a href="mb-pagePerso.php">Info personnel</a></li>
+        <ul class="menu">
+          <li><a class="sum" href="mb-inscription.php">Inscription d'un nouveau membre</a></li>
+          <li><a class="sum" href="mb-connexion.php">Connexion</a></li>
+          <li><a class="sum" href="mb-deconnexion.php">Deconnexion</a></li>
+          <li><a class="sum" href="mb-pagePerso.php">Info personnel</a></li>
         </ul>
         <h2 id="fonction">Ressources</h2>
-        <ul>
+        <ul class="menu">
           <li><a href="disp-art-list.php">Afficher tous les articles</a></li>
         </ul>
         <h1 id="contribuer"> Contribuer</h1>
