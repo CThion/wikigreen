@@ -2,8 +2,8 @@
 -- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le : lun. 10 mai 2021 à 08:10
+-- Hôte : localhost:3308
+-- Généré le : mar. 11 mai 2021 à 01:43
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -36,6 +36,7 @@ CREATE TABLE `art` (
   `id_ref` int(11) NOT NULL COMMENT 'reference de l''article (sa source)',
   `id_mb` int(11) NOT NULL COMMENT 'auteur de cette version de l''article',
   `titre` tinytext NOT NULL,
+  `lien` text NOT NULL COMMENT 'hyperlien externe vers la source',
   `texte` text NOT NULL COMMENT 'résumé de l''article pour le présenter',
   `dateajout` datetime NOT NULL COMMENT 'date de création de cette version de l''article',
   `noteposi` mediumint(9) NOT NULL COMMENT 'notations positives des membres',
