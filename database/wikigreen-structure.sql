@@ -2,8 +2,8 @@
 -- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3308
--- Généré le : mar. 11 mai 2021 à 01:43
+-- Hôte : localhost:3306
+-- Généré le : mar. 11 mai 2021 à 15:43
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -215,6 +215,18 @@ CREATE TABLE `typeart` (
   `type` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `typeref`
+--
+
+CREATE TABLE `typeref` (
+  `id` int(11) NOT NULL,
+  `id_ref` int(11) NOT NULL,
+  `id_typeref` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table de jointure entre ref et typeref';
+
 --
 -- Index pour les tables déchargées
 --
@@ -331,6 +343,12 @@ ALTER TABLE `typeart`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `typeref`
+--
+ALTER TABLE `typeref`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -416,6 +434,12 @@ ALTER TABLE `thm`
 -- AUTO_INCREMENT pour la table `typeart`
 --
 ALTER TABLE `typeart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `typeref`
+--
+ALTER TABLE `typeref`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
