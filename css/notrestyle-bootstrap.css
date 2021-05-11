@@ -82,9 +82,10 @@ font-size: 20px;
 }
 .Texte
 {
-	line-height: 2em;
+	line-height: 1.5em;
+	font-size: 1.6em;
 	text-indent: 10px;
-	text-align: center;
+	text-align: justify;
 	font-family: Times New Roman;
 	color: black;
 }
