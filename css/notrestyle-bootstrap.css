@@ -5,28 +5,28 @@ body
 table
 {
 	
-	border-color: #23F3F0;
+	border-color: #007248;
 	border-width: 2px;
 	border-style : solid;
 }
 th
 {
 	
-	border-color: #23F3F0;
+	border-color: #007248;
 	border-width: 2px;
 	border-style : solid;
 }
 tr
 {
 	
-	border-color: #23F3F0;
+	border-color: #007248;
 	border-width: 2px;
 	border-style : solid;
 }
 td
 {
 	
-	border-color: #23F3F0;
+	border-color: #007248;
 	border-width: 2px;
 	border-style : solid;
 }
@@ -128,15 +128,13 @@ font-size: 20px;
 #connexion
 {
 	font-family: Constantia;
-	font-style: Italic;
-	
+	font-style: Italic;	
 }
 
 #Perso
 {
 	font-family: Bahnschrift Condensed;
 	font-style: Italic;
-	
 }
 #contribuer
 {
@@ -212,14 +210,14 @@ font-size: 20px;
 {
 	font-family: Times New Roman;
 	font-weight: bold;
-	color: #F77B07;
-	text-decoration: underline red;
+	color: #E7B313 ;
+	
 }
 #h2collab
 {
 	font-family: Calibri;
 	color: #A92BAF;
-	text-decoration: underline #F77B07;
+	
 }
 
 #titrearticle
@@ -234,6 +232,32 @@ font-size: 20px;
 {
 	font-family: Times New Roman;
 	color: #A92BAF;
+	font-weight: bold;
+}
+
+#resart
+{
+	font-family: Gill Sans;
+	font-weight: bold;
+}
+#img
+{
+	font-family: Gill Sans;
+	font-weight: bold;
+}
+#ref
+{
+	font-family: Gill Sans;
+	font-weight: bold;
+}
+#thm
+{
+	font-family: Gill Sans;
+	font-weight: bold;
+}
+#section
+{
+	font-family: Gill Sans;
 	font-weight: bold;
 }
 

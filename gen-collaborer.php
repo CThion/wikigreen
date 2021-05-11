@@ -21,7 +21,7 @@ include "all-debutpage.inc.php";
 				blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 				Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
 
-			<h2 id="h2collab"> I] Pourquoi contribuer sur Wikigreen ?</h2>
+			<h2 id="h2collab"> I. Pourquoi contribuer sur Wikigreen ?</h2>
 			
 			<p class="Texte2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
 				nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
@@ -30,7 +30,7 @@ include "all-debutpage.inc.php";
 				blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 				Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
 
-			<h2 id="h2collab">II] Comment contribuer ?</h2>
+			<h2 id="h2collab">II. Comment contribuer ?</h2>
 			
 			<p class="Texte2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
 				nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.

@@ -47,7 +47,7 @@ $nbrep_typeart = count($typeart); // connaitre le nombre d'enregistrements
             <!-- ATTENTION !! L'indiçage dans les tables mysql commence à partir de 1, mais dans les tableaux php il commence à 0 !! D'où le décalage dans les boucles for et les <value> -->
             <!-- sec -->
             <div class="input-group col-md-6">
-                <label class="input-group-text" for="inputGroupSelect01">Section</label>
+                <label id="section" class="input-group-text" for="inputGroupSelect01">Section</label>
                 <select name="sec" class="form-select" id="inputGroupSelect01">
                     <option selected>choisir une section</option>
                     <?php
@@ -61,7 +61,7 @@ $nbrep_typeart = count($typeart); // connaitre le nombre d'enregistrements
             </div>
             <!-- thm -->
             <div class="input-group col-md-6">
-                <label class="input-group-text" for="inputGroupSelect01">Thème</label>
+                <label id="thm" class="input-group-text" for="inputGroupSelect01">Thème</label>
                 <select name="thm" class="form-select" id="inputGroupSelect01">
                     <option selected>choisir un thème</option>
                     <?php
@@ -74,8 +74,8 @@ $nbrep_typeart = count($typeart); // connaitre le nombre d'enregistrements
             </div>
             <!-- ref -->
             <div class="input-group col-md-6">
-                <label class="input-group-text" for="inputGroupSelect01">Référence</label>
-                <select name="ref" class="form-select" id="inputGroupSelect01">
+                <label id="ref" class="input-group-text" for="inputGroupSelect01">Référence</label>
+                <select  name="ref" class="form-select" id="inputGroupSelect01">
                     <option selected>choisir une référence</option>
                     <?php
                     for ($i = 0; $i < $nbrep_ref; $i++) { ?>
@@ -87,7 +87,7 @@ $nbrep_typeart = count($typeart); // connaitre le nombre d'enregistrements
             </div>
             <!-- typeart -->
             <div class="input-group">
-                <label class="input-group-text" for="inputGroupSelect01">Type d'article</label>
+                <label id="typeart" class="input-group-text" for="inputGroupSelect01">Type d'article</label>
                 <select name="typeart" class="form-select" id="inputGroupSelect01">
                     <option selected>choisir un type d'article</option>
                     <?php
@@ -100,27 +100,27 @@ $nbrep_typeart = count($typeart); // connaitre le nombre d'enregistrements
             </div>
             <!-- titre -->
             <div class="input-group">
-                <span class="input-group-text">Titre de l'article</span>
+                <span id="titreart" class="input-group-text">Titre de l'article</span>
                 <!-- <textarea class="form-control" aria-label="With textarea"></textarea> -->
                 <input type="text" name="titre" class="form-control" id="inputAddress">
             </div>
             <!-- image -->
             <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupFile01">Image</label>
+                <label id="img" class="input-group-text" for="inputGroupFile01">Image</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
                 <input type="file" name="image" class="form-control" id="inputGroupFile01">
             </div>
             <!-- texte -->
             <div class="input-group">
-                <span class="input-group-text">Résumé de l'article</span>
-                <textarea name="texte" class="form-control" aria-label="With textarea"></textarea>
+                <span id="resart" class="input-group-text">Résumé de l'article</span>
+                <textarea name="Texte" class="form-control" aria-label="With textarea"></textarea>
             </div>
             <!-- consent : consentement d'utilisation de données -->
             <div class="input-group">
                 <div class="input-group-text">
                     <input name="consent" class="form-check-input mt-0" type="checkbox" value="1" aria-label="Checkbox for following text input">
                 </div>
-                <span class="input-group-text">Accepter que mes données soient sauvegarder pour identifiers cet article</span>
+                <span class="Texte" class="input-group-text">Accepter que mes données soient sauvegarder pour identifiers cet article</span>
             </div>
 
             <!-- bouton de validation -->
