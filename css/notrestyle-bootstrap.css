@@ -222,4 +222,22 @@ font-size: 20px;
 	text-decoration: underline #F77B07;
 }
 
+#titrearticle
+{
+	font-family: Calibri;
+	color: #A92BAF;
+	font-weight: bold;
+	
+}
 
+#version
+{
+	font-family: Times New Roman;
+	color: #A92BAF;
+	font-weight: bold;
+}
+
+.sum a:link { color: red } 
+.sum a:visited { color: blue } 
+.sum a:hover { color: yellow } 
+.sum a:active { color: lime }
