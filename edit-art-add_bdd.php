@@ -70,11 +70,11 @@ $maxartroot = $reponse_artroot->fetchAll(); // récupérer tous les enregistreme
 
 
                 //---- td12 p3 : gestion image de l'article : enregistrement dans dossier \image_upload-art 
-                print_r($_FILES['image']); // Sortir cette ligne quand tout va bien
-                print_r($_FILES); // Sortir cette ligne tout va bien
+                // print_r($_FILES['image']); // Sortir cette ligne quand tout va bien
+                // print_r($_FILES); // Sortir cette ligne tout va bien
                 if (!empty($_FILES['image']['tmp_name'])) {
                     $size = getimagesize($_FILES['image']['tmp_name']);
-                    print_r($size);
+                    // print_r($size);
                     echo "Filetype : " . $size['mime'];
                     if ($size['mime'] == "image/jpeg") {
                         $uploaddir = $_SERVER['DOCUMENT_ROOT'] . "/wikigreen/images/mb-image_upload/image_upload-art/";

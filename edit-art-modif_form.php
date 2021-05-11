@@ -93,7 +93,7 @@ if (!empty($_SESSION['id_membre'])) { //vérifie si le membre est bien connecté
     $reponse_typeart_i = $pdo->prepare($requete_typeart_i);
     $reponse_typeart_i->execute(array($id_art));
     $typeart_i = $reponse_typeart_i->fetchAll();
-
+    print_r($typeart_i);
     //-- nbmb_art : nombre de membre ayant contribué sur cet article
     $requete_nbmb_art = "SELECT COUNT(DISTINCT mb.id) FROM mb, art WHERE art.artroot=? AND art.id_mb=mb.id";
     $reponse_nbmb_art = $pdo->prepare($requete_nbmb_art);
@@ -109,8 +109,8 @@ if (!empty($_SESSION['id_membre'])) { //vérifie si le membre est bien connecté
 
     <main role="main">
         <div class="container">
-            <form action="edit-art-add_bdd.php" enctype="multipart/form-data" method="post" class="row g-2">
-                <!-- ATTENTION !! L'indiçage dans les tables mysql commence à partir de 1, mais dans les tableaux php il commence à 0 !! D'où le décalage dans les boucles for et les <value> -->
+            <form action="edit-art-modif_bdd.php" enctype="multipart/form-data" method="post" class="row g-2">
+                <!-- ATTENTION !! L'indiçage dans les tables mysql commence à partir de 1, mais dans  les tableaux php il commence à 0 !! D'où le décalage dans les boucles for et les <value> -->
                 <!-- sec -->
                 <div class="input-group col-md-6">
                     <label class="input-group-text" for="inputGroupSelect01">Section</label>
@@ -188,11 +188,17 @@ if (!empty($_SESSION['id_membre'])) { //vérifie si le membre est bien connecté
                 <!-- titre -->
                 <div class="input-group">
                     <span class="input-group-text">Titre de l'article</span>
-                    <!-- <textarea class="form-control" aria-label="With textarea"></textarea> -->
                     <input type="text" name="titre" class="form-control" id="inputAddress" value="<?php echo $art_i[0]['titre']; ?>">
                 </div>
-                <!-- image -->
+                <!-- lien -->
+                <div class="input-group">
+                    <span class="input-group-text">Lien vers cette info</span>
+                    <input type="text" name="lien" class="form-control" id="inputAddress" value="<?php echo $art_i[0]['lien']; ?>">
+                </div>
+                <!-- image (image initiale affichée au dessus-->
+                <a><img src=<?php echo "images/mb-image_upload/image_upload-art/image_art-" . $art_i[0]['id'] . ".jpg"; ?> alt=<?php echo "image_art-" . $art_i[0]['id']; ?> width="300" height="300" /></a>
                 <div class="input-group mb-3">
+                    <!-- <img src=<?php echo "images/mb-image_upload/image_upload-art/image_art-" . $art_i[0]['id'] . ".jpg"; ?> alt=<?php echo "image_art-" . $art_i[0]['id']; ?> width="300" height="300" /> -->
                     <label class="input-group-text" for="inputGroupFile01">Image</label>
                     <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
                     <input type="file" name="image" class="form-control" id="inputGroupFile01">
@@ -212,10 +218,19 @@ if (!empty($_SESSION['id_membre'])) { //vérifie si le membre est bien connecté
                     </div>
                     <span class="input-group-text">Accepter que mes données soient sauvegarder pour identifiers cet article</span>
                 </div>
-
-                <!-- bouton de validation -->
+                <!-- bouton de validation et Ancinennes valeurs (pour comparaison)-->
                 <div class="input-group col-md-12">
-                    <button class="btn btn-primary" type="submit">Ajouter ce nouvel article !</button>
+                    <input type="hidden" name="id_art0" value=<?php echo $id_art; ?> />
+                    <input type="hidden" name="sec_0" value=<?php echo $sec_i[0]['id']; ?> />
+                    <input type="hidden" name="thm_0" value=<?php echo $thm_i[0]['id']; ?> />
+                    <input type="hidden" name="ref_0" value=<?php echo $ref_i[0]['id']; ?> />
+                    <input type="hidden" name="typeart_0" value=<?php echo $typeart_i[0]['id']; ?> />
+                    <input type="hidden" name="titre_0" value="<?php echo $art_i[0]['titre']; ?>" />
+                    <input type="hidden" name="lien_0" value="<?php echo $art_i[0]['titre']; ?>" />
+                    <input type="hidden" name="texte_0" value="<?php echo $art_i[0]['texte']; ?>" />
+                    <input type="hidden" name="noteposi_0" value=<?php echo $art_i[0]['noteposi']; ?> />
+                    <input type="hidden" name="notenega_0" value=<?php echo $art_i[0]['notenega']; ?> />
+                    <button class="btn btn-primary" type="submit">Valider la modification !</button>
                 </div>
             </form>
         </div>
