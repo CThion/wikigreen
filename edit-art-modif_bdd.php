@@ -5,7 +5,8 @@ include "all-debutpage.inc.php";
 ?>
 
 <!--==============================================================
-    page confirmant (ou non) la création d'un nouvel article et l'implémantant dans la bdd
+    page confirmant (ou non) la modificaiton d'un article donné, et l'implémentant dans la bdd
+    (on crée une copie de l'article avant modification pour sauvegarder l'évolution des versions)
 ==============================================================-->
 
 <?php
