@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once(".settings\connexion_base.php");
+$donnees['titre_page'] = "Page personnelle Wikigreen";
 include "all-debutpage.inc.php";
 ?>
 

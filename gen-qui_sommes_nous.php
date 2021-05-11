@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once(".settings\connexion_base.php");
+$donnees['titre_page'] = "Wikigreen : qui sommes nous ?";
 include "all-debutpage.inc.php";
 ?>
 

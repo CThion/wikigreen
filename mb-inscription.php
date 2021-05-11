@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once(".settings\connexion_base.php");
+$donnees['titre_page'] = "Création d'un compte Wikigreen";
 include "all-debutpage.inc.php";
 ?>
 

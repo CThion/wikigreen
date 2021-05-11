@@ -14,7 +14,7 @@
   
   <link href="css/notrestyle-bootstrap.css" rel="stylesheet" type="text/css" />
 
-  <title>Page d'accueil</title>
+  <title><?php echo $donnees['titre_page'];?></title>
 </head>
 
 <body>
