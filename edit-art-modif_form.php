@@ -186,8 +186,8 @@ if (!empty($_SESSION['id_membre'])) { //vérifie si le membre est bien connecté
                     </select>
                 </div>
                 <!-- titre -->
-                <div class="input-group">
-                    <span class="input-group-text">Titre de l'article</span>
+                <div id="titre" class="input-group">
+                    <span  class="input-group-text">Titre de l'article</span>
                     <input type="text" name="titre" class="form-control" id="inputAddress" value="<?php echo $art_i[0]['titre']; ?>">
                 </div>
                 <!-- lien -->
@@ -206,7 +206,7 @@ if (!empty($_SESSION['id_membre'])) { //vérifie si le membre est bien connecté
                 <!-- texte -->
                 <div class="input-group">
                     <span class="input-group-text">Résumé de l'article</span>
-                    <textarea name="texte" class="form-control" aria-label="With textarea">
+                    <textarea class="Texte" name="texte" class="form-control" aria-label="With textarea">
                         <?php echo $art_i[0]['texte']; //arffichage du texte initiale de l'article
                         ?>
                     </textarea>
@@ -216,7 +216,7 @@ if (!empty($_SESSION['id_membre'])) { //vérifie si le membre est bien connecté
                     <div class="input-group-text">
                         <input name="consent" class="form-check-input mt-0" type="checkbox" value="1" aria-label="Checkbox for following text input">
                     </div>
-                    <span class="input-group-text">Accepter que mes données soient sauvegarder pour identifiers cet article</span>
+                    <span id="donnees" class="input-group-text">Accepter que mes données soient sauvegarder pour identifiers cet article</span>
                 </div>
                 <!-- bouton de validation et Ancinennes valeurs (pour comparaison)-->
                 <div class="input-group col-md-12">

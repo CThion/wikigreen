@@ -2,6 +2,10 @@ body
 {
 	background-color:#007248;
 }
+header 	
+{
+	background-color:#007248;
+}
 table
 {
 	
@@ -50,7 +54,11 @@ font-size: 20px;
 	font-family: Helvetica;
 	color : black;
 }
-
+.navbar
+{
+	padding-bottom: 1rem;
+	padding-top: .0rem;
+}
 .navbar-brand 
 {
 	font-family: Helvetica;
@@ -83,6 +91,7 @@ font-size: 20px;
 .Texte2
 {
 	line-height: 1em;
+	font-size: 1.2em;
 	text-indent: 20px;
 	text-align: justify;
 	font-family: Times New Roman;
@@ -255,11 +264,59 @@ font-size: 20px;
 	font-family: Gill Sans;
 	font-weight: bold;
 }
+#typeart
+{
+	font-family: Gill Sans;
+	font-weight: bold;
+}
+#titreart
+{
+	font-family: Gill Sans;
+	font-weight: bold;
+}
+
 #section
 {
 	font-family: Gill Sans;
 	font-weight: bold;
 }
+
+#donnees 
+{
+	font-family: Calibri;
+	font-weight: bold;
+}
+#commentaire
+{
+	font-family: Times New Roman ;
+	font-size: 2em;
+	font-weight: bold;
+	color : #167026;
+
+}
+#log
+{
+	font-family: Arial;
+	color: #A92BAF;
+	font-weight: bold;
+	font-style: Italic
+}
+
+#date
+{
+	font-family: Arial;
+	text-decoration: underline red;
+}
+#comment
+{
+	line-height: 2em;
+	font-size: 20px;
+	text-indent: 20px;
+	text-align: justify;
+	font-family: Times New Roman;
+	color: black;
+}
+
 
 .sum a:link { color: red } 
 .sum a:visited { color: blue } 

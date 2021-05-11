@@ -54,21 +54,21 @@ include "all-debutpage.inc.php";
                 $cmt = $reponse_cmt->fetchAll();
             ?>
 
-                <h2>Commentaire bien publié ! En voici l'apperçu :</h2>
+                <h2 id="commentaire">Commentaire bien publié ! En voici l'aperçu :</h2>
 
-                <!-- appercu du commentaire -->
+                <!-- apercu du commentaire -->
                 <!-- https://getbootstrap.com/docs/5.0/components/list-group/ partie custom content -->
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action">
                         <div class="d-flex w-100 justify-content-between">
                             <!-- le pseudo de l'auteur -->
-                            <h5 class="mb-1"><?php echo $_SESSION['pseudo']; ?></h5>
+                            <h5 id="log" class="mb-1"><?php echo $_SESSION['pseudo']; ?></h5>
                             <!-- la date du commentaire -->
-                            <small><?php echo $cmt[0]['date']; ?></small>
+                            <small id="date"><?php echo $cmt[0]['date']; ?></small>
                         </div>
                         <!-- le texte du commentaire -->
-                        <p class="mb-1"><?php echo $texte; ?></p>
-                        <small> Pour version du <?php echo $dateajout_art; ?> de l'article</small>
+                        <p id="comment" class="mb-1"><?php echo $texte; ?></p>
+                        <small id="date"> Pour version du <?php echo $dateajout_art; ?> de l'article</small>
                     </a>
                 </div>
 
@@ -80,7 +80,7 @@ include "all-debutpage.inc.php";
             <?php
             } else { //cas où ça se passe pas bien, le commentaire ne peut pas être publié
             ?>
-                <h2>Veillez à bien renseigner tous les champs et à être connecté pour pouvoir publier des commentaires !</h2>
+                <h2 id="commentaire">Veillez à bien renseigner tous les champs et à être connecté pour pouvoir publier des commentaires !</h2>
             <?php
             }
             ?>
