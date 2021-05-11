@@ -9,8 +9,6 @@ include "all-debutpage.inc.php";
 ==============================================================-->
 
 <?php
-session_start();
-require_once(".settings\connexion_base.php");
 
 if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])) {
     $pseudo = $_POST['pseudo'];
