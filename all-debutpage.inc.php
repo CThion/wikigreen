@@ -11,10 +11,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
   <!-- intégration de notre propre feuille de style css -->
-  
+
   <link href="css/notrestyle-bootstrap.css" rel="stylesheet" type="text/css" />
 
-  <title><?php echo $donnees['titre_page'];?></title>
+  <title><?php echo $donnees['titre_page']; ?></title>
 </head>
 
 <body>
@@ -31,16 +31,17 @@
         <!-- différents liens de la bare de nav supérieure -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- barre de recherche de contenu (art, ref, thm...) -->
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Trouver une ressource" aria-label="rechercher">
+          <form action="gen-recherche_avance.php"  class="d-flex"  method="POST">
+            <!-- ne fonctionne que pour la recherche dans les titres, pas encore sur les autres champs -->
+            <input class="form-control me-2" type="search" placeholder="Trouver un article" aria-label="rechercher" name="titre_s">
             <button class="btn btn-outline-success" type="submit">Go!</button>
           </form>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" id ="centre" href="gen-recherche_avance.php">Recherche avancée</a>
+              <a class="nav-link active" aria-current="page" id="centre" href="gen-recherche_avance.php">Recherche avancée</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active"id="centre" aria-current="page" href="gen-collaborer.php"> Collaborer </a>
+              <a class="nav-link active" id="centre" aria-current="page" href="gen-collaborer.php"> Collaborer </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" id="centre" aria-current="page" href="gen-qui_sommes_nous.php"> Qui-sommes nous ? </a>
