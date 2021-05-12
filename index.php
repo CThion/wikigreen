@@ -13,16 +13,10 @@ include "all-debutpage.inc.php";
   <div class="container">
     <div class="row">
       <div id="Mois" class="col-md-4">
-        Article du mois :
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
-        Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
-        Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
-        Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue.
-        Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede.
-        Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.
-        Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit .
+        Bienvenue sur Wikigreen ! Notre site est un site participatif sur le thème de l'écologie.Vous pourrez trouver ici du contenu très varié
+		( articles , vidéos ... ) classés par sections et par thèmes . En vous inscrivant , vous pourrez égalment rajouter de nouveau contenu et
+		ainsi faire évoluer le site ! Votre participation peut égalment permettre d'évaluer les contenus proposés ou de les nuancer via la zone
+		commentaire . N'hesitez pas , tout le monde peut participer !  Merci pour votre attention et bonne navigation !	
       </div>
       <div class="col-md-4">
         <h1 id="Perso"> Rien que pour vous </h1>
@@ -49,6 +43,7 @@ include "all-debutpage.inc.php";
         <div>General</div>
         <img src="images/image_sec/image_sec-3.jpg" alt="image_sec-3" class="img-thumbnail" width="300" height="300" />
       </div>
+<<<<<<< Updated upstream
       <div id="bord" clas="col-md-4">
         <div>Consommation</div>
         <img src="images/image_sec/image_sec-4.jpg" alt="image_sec-4" class="img-thumbnail" width="300" height="300" />
@@ -56,6 +51,15 @@ include "all-debutpage.inc.php";
       <div id="bord" clas="col-md-4">
         <div>Cause animale</div>
         <img src="images/image_sec/image_sec-5.jpg" alt="image_sec-5" class="img-thumbnail" width="300" height="300" />
+=======
+      <div clas="col-md-4">
+        <div>Conssomation</div>
+        <img src="images/image_sec/image_sec-4.jpg" alt="image_sec-4" width="300" height="300" />
+      </div>
+      <div clas="col-md-4">
+        <div>Cause animal</div>
+        <img src="images/image_sec/image_sec-5.jpg" alt="image_sec-5" width="300" height="300" />
+>>>>>>> Stashed changes
       </div>
       <div id="bord" clas="col-md-4">
         <div>Energie</div>
