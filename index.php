@@ -42,28 +42,28 @@ include "all-debutpage.inc.php";
       </div>
     </div>
     <div id="div1" class="row row-cols-3">
-      <div clas="col-md-4">
+      <div id="bord" clas="col-md-4">
         <p>Tous nos thèmes et articles <br> regroupés en 5 grandes sections !</p>
       </div>
-      <div clas="col-md-4">
+      <div id="bord" clas="col-md-4">
         <div>General</div>
-        <img src="images/image_sec/image_sec-3.jpg" alt="image_sec-3" width="300" height="300" />
+        <img src="images/image_sec/image_sec-3.jpg" alt="image_sec-3" class="img-thumbnail" width="300" height="300" />
       </div>
-      <div clas="col-md-4">
-        <div>Conssomation</div>
-        <img src="images/image_sec/image_sec-4.jpg" alt="image_sec-4" width="300" height="300" />
+      <div id="bord" clas="col-md-4">
+        <div>Consommation</div>
+        <img src="images/image_sec/image_sec-4.jpg" alt="image_sec-4" class="img-thumbnail" width="300" height="300" />
       </div>
-      <div clas="col-md-4">
-        <div>Cause animal</div>
-        <img src="images/image_sec/image_sec-5.jpg" alt="image_sec-5" width="300" height="300" />
+      <div id="bord" clas="col-md-4">
+        <div>Cause animale</div>
+        <img src="images/image_sec/image_sec-5.jpg" alt="image_sec-5" class="img-thumbnail" width="300" height="300" />
       </div>
-      <div clas="col-md-4">
+      <div id="bord" clas="col-md-4">
         <div>Energie</div>
-        <img src="images/image_sec/image_sec-6.jpg" alt="image_sec-6" width="300" height="300" />
+        <img src="images/image_sec/image_sec-6.jpg" alt="image_sec-6" class="img-thumbnail" width="300" height="300" />
       </div>
-      <div clas="col-md-4">
+      <div id="bord" clas="col-md-4">
       <div>Progrès et avenir</div>
-      <img src="images/image_sec/image_sec-7.jpg" alt="image_sec-7" width="300" height="300" />
+      <img src="images/image_sec/image_sec-7.jpg" alt="image_sec-7" class="img-thumbnail" width="300" height="300" />
       </div>
     </div>
   </div>
