@@ -118,7 +118,7 @@ $nbrep_typeart = count($typeart); // connaitre le nombre d'enregistrements
                 <!-- texte -->
                 <div class="input-group">
                     <span id="resart" class="input-group-text">Résumé de l'article</span>
-                    <textarea name="Texte" class="form-control" aria-label="With textarea"></textarea>
+                    <textarea name="Texte" class="form-control" aria-label="With textarea" rows="15"></textarea>
                 </div>
                 <!-- consent : consentement d'utilisation de données -->
                 <div class="input-group">

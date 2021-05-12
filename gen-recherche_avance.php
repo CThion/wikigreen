@@ -20,6 +20,7 @@ include "all-debutpage.inc.php";
 //---- VALEUR FILTRE PAR DEFAUT ----
 
 $titre_s = '%';
+$id_thm_s = '(3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18)';
 //$filtre_theme = 
 
 //---- VALEUR DE FILTRE ----
@@ -36,8 +37,8 @@ $titre_s = '%';
 if (!empty($_POST['titre_s'])) { //titre_s est l'unique parametre utilisé par la recherche simple
     $titre_s = '%' . $_POST['titre_s'] . '%'; //récupération valeur filtre pour titre avec ajout % pour requête LIKE
 }
-if (!empty($_POST['theme_s'])) {
-    $theme_s = $_POST['theme_s'];
+if (!empty($_POST['id_theme_s'])) {
+    $id_theme_s = $_POST['id_theme_s'];
 }
 
 //---------------- SELECT : ENSEMBLE ARTICLE AFFICHABLE ----
@@ -62,7 +63,8 @@ for ($i = 0; $i < $nbrep_distartroot; $i++) { //pour chaque valeur de artroot, o
 
 //---------------- SELECT : FILTRE TOUTE VERSION ----
 $requete_s = "SELECT * FROM art
-            WHERE titre LIKE '$titre_s';";
+            WHERE titre LIKE '$titre_s'
+            AND id_thm IN".$id_thm_s;
 $reponse_s = $pdo->prepare($requete_s);
 $reponse_s->execute();
 $art_s = $reponse_s->fetchAll();
@@ -93,11 +95,11 @@ $nbrep_art = count($art);
         <div class="col">
 
             <!-- Partie avec formulaire pour séléctionner les différents paramètres -->
-            <!-- <div class="input-group mb-3">
+            <div class="row mb-3">
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username">
                 <span class="input-group-text">@</span>
                 <input type="text" class="form-control" placeholder="Server" aria-label="Server">
-            </div> -->
+            </div>
 
 
             <!-- fait avec bootstrap/component/listgroup -->

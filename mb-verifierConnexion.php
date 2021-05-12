@@ -38,7 +38,7 @@ if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])) {
                 {
             ?>
                     <h2>Bienvenu <?php echo $pseudo; ?> ! On est content de vous revoir !</h2>
-                    Retour au <a href="sommaire.php">sommaire</a>
+                    Retour à <a href="index.php">l'accueil</a>
                 <?php
                     //-- affectation des variables de sessions
                     $_SESSION['pseudo'] = $pseudo;
@@ -49,14 +49,14 @@ if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])) {
                 ?>
                     <p>Mot de passe incorrecte, veuillez vérifier vos entrées</p>
                     <a href="mb-connexion.php">Retour à l'écran de connexion</a>
-                    Retour au <a href="sommaire.php">sommaire</a>
+                    Retour à <a href="index.php">l'accueil</a>
                 <?php
                 }
             } else { //-- si on a aucun enregistrement (donc aucune entrée avec son login)
                 ?>
                 <p>Aucun compte enregistré avec ce pseudonyme, veuillez vérifier vos entrées ou créez-vous un compte</p>
                 <a href="mb-connexion.php">Retour à l'écran de connexion</a>
-                Retour au <a href="sommaire.php">sommaire</a>
+                Retour à <a href="index.php">l'accueil</a>
             <?php
             }
             ?>
