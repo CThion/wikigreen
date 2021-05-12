@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once(".settings\connexion_base.php");
+require_once("settings\connexion_base.php");
 $donnees['titre_page'] = "Collaborer";
 include "all-debutpage.inc.php";
 ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once(".settings\connexion_base.php");
+require_once("settings\connexion_base.php");
 $donnees['titre_page'] = "formulaire de création d'article";
 include "all-debutpage.inc.php";
 ?>
