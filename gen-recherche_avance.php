@@ -93,11 +93,11 @@ print_r($art);
         <div class="col">
 
             <!-- Partie avec formulaire pour séléctionner les différents paramètres -->
-            <div class="input-group mb-3">
+            <!-- <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username">
                 <span class="input-group-text">@</span>
                 <input type="text" class="form-control" placeholder="Server" aria-label="Server">
-            </div>
+            </div> -->
 
 
             <!-- fait avec bootstrap/component/listgroup -->
