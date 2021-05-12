@@ -20,11 +20,14 @@ $distartroot = $reponse_distartroot->fetchAll();
 $nbrep_distartroot = count($distartroot);
 
 //-- récupération des articles à afficher (on doit pouvoir se passez d'un boucle mais pour l'instant ça ça marche)
+
 $art = array();
-for ($i = 1; $i <= $nbrep_distartroot; $i++) { //pour chaque valeur de artroot, on prend l'article le plus récent
+for ($i = 0; $i < $nbrep_distartroot; $i++) { //pour chaque valeur de artroot, on prend l'article le plus récent
+    //ATTENTION disparoot commence à 1 dans la table art
+    $j = $distartroot[$i][0]; // valeur de artroot visée
     $requete_art = "SELECT * FROM art
-                    WHERE art.artroot = $i
-                    AND art.dateajout IN (SELECT MAX(dateajout) FROM art WHERE art.artroot = $i);";
+                    WHERE art.artroot = $j
+                    AND art.dateajout IN (SELECT MAX(dateajout) FROM art WHERE art.artroot = $j);";
     $reponse_art = $pdo->prepare($requete_art);
     $reponse_art->execute();
     $arti = $reponse_art->fetchAll();
@@ -50,7 +53,7 @@ for ($i = 1; $i <= $nbrep_distartroot; $i++) { //pour chaque valeur de artroot, 
                                     <!-- image du thème -->
                                     <li class="list-group-item"> <img src=<?php echo "images/image_thm/image_thm-" . $art[$i]['id_thm'] . ".jpg"; ?> alt=<?php echo "image_thm-" . $art[$i]['id_thm']; ?> width="50" height="50" /></li>
                                     <!-- titre -->
-                                    <li class="list-group-item" id="titrearticle">Titre : <?php echo $art[$i]["titre"]; ?></li>
+                                    <li class="list-group-item" id="titrearticle"><?php echo "#".$art[$i]['artroot']." : ".$art[$i]["titre"]; ?></li>
                                 </ul>
                                 <!-- bouton dirigeant vers article pleine écran -->
 
@@ -66,7 +69,7 @@ for ($i = 1; $i <= $nbrep_distartroot; $i++) { //pour chaque valeur de artroot, 
             <div class="col-6">
                 <div class="tab-content" id="nav-tabContent">
                     <?php
-                    for ($i = 0; $i < count($art) + 1; $i++) {
+                    for ($i = 0; $i < $nbrep_distartroot; $i++) {
                     ?>
                         <div class="tab-pane fade show" id=<?php echo "list-" . $i; ?> role="tabpanel" aria-labelledby=<?php echo "list-" . $i . "-list"; ?>>
                             <!-- titre art -->
