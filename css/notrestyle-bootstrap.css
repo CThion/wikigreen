@@ -1,10 +1,18 @@
 body
 {
 	background-color:#007248;
+	padding-bottom: 1rem;
+}
+
+footer
+{
+	padding-top: 1rem;
+	
 }
 header 	
 {
 	background-color:#007248;
+	
 }
 table
 {
@@ -59,6 +67,12 @@ font-size: 20px;
 	padding-bottom: 1rem;
 	padding-top: .0rem;
 }
+.bg-light 
+{	
+    background-color: #007248;
+}
+
+
 .navbar-brand 
 {
 	font-family: Helvetica;
@@ -103,11 +117,19 @@ font-size: 20px;
 	text-align: left;
 	font-style: italic;
 	padding-bottom: 0;
+	padding-right :0;
 	text-indent: 10px;
 	border-color: #EC13A7 ;
 	border-width: 1px;
 	border-style : solid;
 	background-color: #B8F4EC ;
+}
+
+.row
+{
+	margin-left: 0;	
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 #centre
@@ -317,7 +339,17 @@ font-size: 20px;
 	font-family: Times New Roman;
 	color: black;
 }
-
+#main
+{
+	margin-bottom : 1em;
+}
+#div1
+{
+	font-family: Arial ;
+	font-size: 1em;
+	font-weight: bold;
+	color: #A21EA9;
+}
 
 .sum a:link { color: red } 
 .sum a:visited { color: blue } 

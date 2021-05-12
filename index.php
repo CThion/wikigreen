@@ -9,7 +9,7 @@ include "all-debutpage.inc.php";
     Page d'accueil du site
 ==============================================================-->
 
-<main role="main">
+<main id="main" role="main">
   <div class="container">
     <div class="row">
       <div id="Mois" class="col-md-4">
@@ -41,7 +41,7 @@ include "all-debutpage.inc.php";
         <a href="edit-art-add_form.php">Ajouter un article</a>
       </div>
     </div>
-    <div class="row row-cols-3">
+    <div id="div1" class="row row-cols-3">
       <div clas="col-md-4">
         <p>Tous nos thèmes et articles <br> regroupés en 5 grandes sections !</p>
       </div>

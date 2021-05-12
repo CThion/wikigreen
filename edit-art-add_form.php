@@ -43,7 +43,7 @@ $typeart = $reponse_typeart->fetchAll(); // récupérer tous les enregistrements
 $nbrep_typeart = count($typeart); // connaitre le nombre d'enregistrements
 ?>
 
-<main role="main">
+<main id="main" role="main">
     <div class="container">
         <?php
         if (!empty($_SESSION['id_membre'])) { //il faut être connecté pour pouvoir ajouter un article

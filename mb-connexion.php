@@ -23,12 +23,12 @@ include "all-debutpage.inc.php";
                 <p><input type="submit" value="login" /></p>
             </fieldset>
         </form>
-        Retour au <a href="sommaire.php">sommaire</a>
+        Retour au <a href="index.php">sommaire</a>
     <?php
     } else { ?>
         <h3 id="Profil">Vous êtes déjà connecté sur le profil de <?php echo $_SESSION['pseudo']; ?></h3>
-        <p><a href="deconnexion.php">Deconnectez vous</a> avant de vous connecter à une autre compte.</p>
-        Retour au <a href="sommaire.php">sommaire</a>
+        <p><a href="mb-deconnexion.php">Deconnectez vous</a> avant de vous connecter à une autre compte.</p>
+        Retour au <a href="index.php">sommaire</a>
     <?php }
     ?>
     </div>
