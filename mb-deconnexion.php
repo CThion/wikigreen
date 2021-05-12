@@ -17,7 +17,7 @@ include "all-debutpage.inc.php";
             unset($_SESSION['id_membre']);
             ?>
             <h1> Vous avez été déconnecté. </h1>
-            Retour au <a href="sommaire.php">sommaire</a>
+            Retour au <a href="index.php">sommaire</a>
         </div>
     </div>
 </main>
