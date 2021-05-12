@@ -84,7 +84,7 @@ sort($art);
 $nbrep_art = count($art);
 
 // print_r($art_s);
-print_r($art);
+// print_r($art);
 
 ?>
 

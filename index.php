@@ -41,6 +41,16 @@ include "all-debutpage.inc.php";
         <a href="edit-art-add_form.php">Ajouter un article</a>
       </div>
     </div>
+    <div class="row row-cols-3">
+      <div clas="col-md-4">
+        <p>Tous nos thèmes et articles <br> regroupés en 5 grandes sections !</p>
+      </div>
+      <div clas="col-md-4">General</div>
+      <div clas="col-md-4">Consommation</div>
+      <div clas="col-md-4">Cause animal</div>
+      <div clas="col-md-4">Energie</div>
+      <div clas="col-md-4">Progrès et avenir</div>
+    </div>
   </div>
 </main>
 
