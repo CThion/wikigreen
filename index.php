@@ -45,11 +45,26 @@ include "all-debutpage.inc.php";
       <div clas="col-md-4">
         <p>Tous nos thèmes et articles <br> regroupés en 5 grandes sections !</p>
       </div>
-      <div clas="col-md-4">General</div>
-      <div clas="col-md-4">Consommation</div>
-      <div clas="col-md-4">Cause animal</div>
-      <div clas="col-md-4">Energie</div>
-      <div clas="col-md-4">Progrès et avenir</div>
+      <div clas="col-md-4">
+        <div>General</div>
+        <img src="images/image_sec/image_sec-3.jpg" alt="image_sec-3" width="300" height="300" />
+      </div>
+      <div clas="col-md-4">
+        <div>Conssomation</div>
+        <img src="images/image_sec/image_sec-4.jpg" alt="image_sec-4" width="300" height="300" />
+      </div>
+      <div clas="col-md-4">
+        <div>Cause animal</div>
+        <img src="images/image_sec/image_sec-5.jpg" alt="image_sec-5" width="300" height="300" />
+      </div>
+      <div clas="col-md-4">
+        <div>Energie</div>
+        <img src="images/image_sec/image_sec-6.jpg" alt="image_sec-6" width="300" height="300" />
+      </div>
+      <div clas="col-md-4">
+      <div>Progrès et avenir</div>
+      <img src="images/image_sec/image_sec-7.jpg" alt="image_sec-7" width="300" height="300" />
+      </div>
     </div>
   </div>
 </main>
