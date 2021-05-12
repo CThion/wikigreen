@@ -16,22 +16,16 @@ include "all-debutpage.inc.php";
             <h1 id="h1collab"> Qu'est-ce que wikigreen ?</h1>
 
             <h2 id="h2collab">Une plaque tournant de l'information fiable</h2>
-            <p class="Texte2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-                nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
-                massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.
-                Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue
-                blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
+            <p class="Texte2"> Sur wikigreen , nous pensons que c'est par le partage d'information et l'échange entre individus bienveillant et rigouruex qui mène à la 
+			meilleure information sicentifique . Ici , vous trouverez donc du contenu partagé par nos nombreux  collaborateurs , ce contenu est débattu et évalué par eux 
+            même , ce qui amène à une sélection de l'information et donc à une qualité croissante de celle ci.			</p>
 				
             <a href="disp-art-list.php">Voir tous les articles </a>
 
             <h2 id="h2collab">Un site collaboratif wiki</h2>
-            <p class="Texte2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-                nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
-                massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.
-                Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue
-                blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
+            <p class="Texte2"> Le contenu en tout genre partagé par nos collaborateur est trié via un systéme de section puis de thèmes . De nouvelles sections et de nouveaux
+			thèmes peuvent être ajoutés par les internautes afin d'affiner ou d'enrichir le contenu . Un moteur de recherche , ainsi que des la sélection d'un "article du mois" 
+			sera ajouté prochainement !</p>
         </div>
     </div>
 </main>
